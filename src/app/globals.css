@@ -1,0 +1,304 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Forest family — deep green is the DOMINANT structural brand color,
+     bone is the cool oatmeal neutral, honey is the single warm accent. */
+  --color-forest-deep: #14241F;
+  --color-forest: #1C3A30;
+  --color-forest-soft: #2C4D40;
+  --color-bone: #EDEFE9;
+  --color-bone-dim: #E2E6DC;
+  --color-honey: #BE8A3E;
+  --color-honey-soft: #D6A862;
+
+  /* Legacy token names remapped to the Forest family so every existing
+     utility class (text-sage, bg-navy, text-earth, bg-cream...) re-skins. */
+  --color-navy: #16271F;
+  --color-navy-light: #1C3A30;
+  --color-blue: #2F5A4A;
+  --color-blue-light: #4A7C6A;
+  --color-gold: #BE8A3E;
+  --color-gold-light: #D6A862;
+  --color-ivory: #EDEFE9;
+  --color-ivory-dark: #E2E6DC;
+  --color-sage: #2F5A4A;
+  --color-sage-light: #6F9C8A;
+  --color-earth: #BE8A3E;
+  --color-earth-light: #D6A862;
+  --color-warm: #8B6F4E;
+  --color-cream: #E7EAE2;
+}
+
+:root {
+  --background: #EDEFE9;
+  --foreground: #16271F;
+  --card: #FBFCFA;
+  --card-foreground: #16271F;
+  --popover: #FBFCFA;
+  --popover-foreground: #16271F;
+  --primary: #1C3A30;
+  --primary-foreground: #EDEFE9;
+  --secondary: #E2E6DC;
+  --secondary-foreground: #16271F;
+  --muted: #E2E6DC;
+  --muted-foreground: #5A6B62;
+  --accent: #BE8A3E;
+  --accent-foreground: #16271F;
+  --destructive: #C0432F;
+  --border: #D7DBCF;
+  --input: #D7DBCF;
+  --ring: #2F5A4A;
+  --chart-1: #2F5A4A;
+  --chart-2: #BE8A3E;
+  --chart-3: #16271F;
+  --chart-4: #5A6B62;
+  --chart-5: #D6A862;
+  --radius: 1rem;
+  --sidebar: #EDEFE9;
+  --sidebar-foreground: #16271F;
+  --sidebar-primary: #1C3A30;
+  --sidebar-primary-foreground: #EDEFE9;
+  --sidebar-accent: #E2E6DC;
+  --sidebar-accent-foreground: #16271F;
+  --sidebar-border: #D7DBCF;
+  --sidebar-ring: #2F5A4A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-ivory text-navy;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  /* Keep the fixed navbar from covering the top of a scrolled-to section. */
+  section[id],
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+  /* Visible keyboard focus for accessibility — pointer users never see it. */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.03),
+      0 2px 4px -2px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .glow-sage {
+    box-shadow:
+      0 0 24px rgba(47, 90, 74, 0.14),
+      0 0 70px rgba(47, 90, 74, 0.06);
+  }
+
+  .glow-earth {
+    box-shadow:
+      0 0 24px rgba(190, 138, 62, 0.18),
+      0 0 70px rgba(190, 138, 62, 0.08);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #16271F 0%, #2F5A4A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-earth {
+    background: linear-gradient(135deg, #BE8A3E 0%, #D6A862 50%, #BE8A3E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-divider {
+    background: linear-gradient(90deg, transparent, #D7DBCF, transparent);
+    height: 1px;
+  }
+
+  .organic-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .noise-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* On-brand photography: keep natural warmth, only a touch of refinement so
+     images sit in the palette without looking processed. */
+  .img-forest {
+    filter: saturate(0.96) contrast(1.02);
+  }
+
+  /* Subtle bottom shade so floating chips/labels over photos stay legible. */
+  .img-forest-tint::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 52%, rgba(20, 36, 31, 0.3));
+    pointer-events: none;
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(22, 39, 31, 0.12), transparent);
+    height: 1px;
+  }
+
+  .safe-area-inset {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .decorative-number {
+    font-size: clamp(6rem, 15vw, 14rem);
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(47, 90, 74, 0.1);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .bento-card {
+    background: #FBFCFA;
+    border: 1px solid rgba(22, 39, 31, 0.06);
+    box-shadow:
+      0 1px 2px rgba(20, 36, 31, 0.03),
+      0 10px 30px rgba(20, 36, 31, 0.04);
+    transition: all 0.4s cubic-bezier(0.25, 0.4, 0.25, 1);
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 1px 2px rgba(20, 36, 31, 0.03),
+      0 18px 44px rgba(20, 36, 31, 0.08);
+    border-color: rgba(47, 90, 74, 0.16);
+  }
+
+  .editorial-quote {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .editorial-quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #2F5A4A, #BE8A3E);
+    border-radius: 2px;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgba(47, 90, 74, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
+}

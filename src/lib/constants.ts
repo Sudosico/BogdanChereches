@@ -362,10 +362,12 @@ export const FOOTER = {
 } as const;
 
 export const SEO = {
-  title: "Bogdan Cherecheș - Terapie Bowen | Zalău & Șimleu Silvaniei",
+  title: "Terapie Bowen Zalău și Șimleu Silvaniei | Bogdan Cherecheș",
   description:
-    "Terapie Bowen blândă și personalizată cu Bogdan Cherecheș în Zalău și Șimleu Silvaniei. Programări rapide prin WhatsApp.",
-  url: "https://bowenbogdan.ro",
+    "Terapie Bowen în Zalău și Șimleu Silvaniei cu Bogdan Cherecheș. Ședințe blânde pentru dureri de spate, stres, recuperare și relaxare profundă. Programare rapidă pe WhatsApp.",
+  // Set NEXT_PUBLIC_SITE_URL in Vercel to your live domain so canonical / OG /
+  // sitemap all point to the real address. Falls back to the planned domain.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://bowenbogdan.ro",
   locale: "ro_RO",
 } as const;
 

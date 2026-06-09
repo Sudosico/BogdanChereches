@@ -26,7 +26,7 @@ export function WhatIsBowenSection() {
             {/* Floating accent */}
             <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl shadow-sage/5 px-5 py-4 border border-sage/5">
               <div className="text-2xl mb-0.5">🌿</div>
-              <p className="text-xs font-semibold text-navy">45-60 min</p>
+              <p className="text-xs font-semibold text-navy">50-60 min</p>
               <p className="text-[10px] text-muted-foreground tracking-wide">
                 per ședință
               </p>

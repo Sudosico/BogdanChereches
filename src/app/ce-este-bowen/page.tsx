@@ -148,7 +148,7 @@ export default function CeEsteBowen() {
               <div className="space-y-5">
                 <ScrollReveal>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    O ședință tipică de Terapie Bowen durează între 45 și 60 de
+                    O ședință tipică de Terapie Bowen durează între 50 și 60 de
                     minute. Te vei afla pe o masă de terapie, îmbrăcat în haine
                     lejere și confortabile.
                   </p>
@@ -163,9 +163,9 @@ export default function CeEsteBowen() {
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
                   <p className="text-navy font-medium text-lg leading-relaxed pl-4 border-l-2 border-sage">
-                    Se recomandă un set inițial de 3 ședințe, la interval de o
-                    săptămână. Corpul continuă să răspundă terapiei până la 10
-                    zile după ședință.
+                    Se recomandă 8-10 ședințe, la interval de o săptămână.
+                    Corpul continuă să răspundă terapiei până la 10 zile după
+                    ședință.
                   </p>
                 </ScrollReveal>
               </div>

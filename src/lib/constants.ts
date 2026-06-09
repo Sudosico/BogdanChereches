@@ -58,9 +58,9 @@ export const HERO = {
 } as const;
 
 export const TRUST_STATS = [
-  { value: 45, suffix: "-60 min", label: "Durată ședință" },
+  { value: 50, suffix: "-60 min", label: "Durată ședință" },
   { value: 100, suffix: "%", label: "Non-invaziv" },
-  { value: 3, suffix: " ședințe", label: "Set inițial recomandat" },
+  { value: 8, suffix: "-10 ședințe", label: "Recomandate" },
   { value: 10, suffix: " zile", label: "Efectul continuă după ședință" },
 ] as const;
 
@@ -178,9 +178,9 @@ export const WHO_CHOOSES = {
       icon: "Sparkles",
     },
     {
-      title: "Recuperare sportivă",
+      title: "Recuperare sportivă și accidentări",
       description:
-        "Entorse, întinderi, suprasolicitare. Bowen accelerează recuperarea fără medicamente.",
+        "Entorse, întinderi, accidentări sau suprasolicitare. Bowen accelerează recuperarea fără medicamente.",
       icon: "Dumbbell",
     },
     {
@@ -298,12 +298,12 @@ export const FAQ_ITEMS = [
   {
     question: "Cum decurge o ședință?",
     answer:
-      "O ședință durează între 45 și 60 de minute. Începe cu o discuție scurtă despre starea ta, urmată de mișcări Bowen aplicate pe puncte specifice, cu pauze între proceduri. Te vei afla pe o masă de terapie, îmbrăcat în haine lejere. Majoritatea oamenilor se relaxează profund, mulți chiar adorm.",
+      "O ședință durează între 50 și 60 de minute. Începe cu o discuție scurtă despre starea ta, urmată de mișcări Bowen aplicate pe puncte specifice, cu pauze între proceduri. Te vei afla pe o masă de terapie, îmbrăcat în haine lejere. Majoritatea oamenilor se relaxează profund, mulți chiar adorm.",
   },
   {
     question: "Cât durează o ședință?",
     answer:
-      "O ședință tipică durează între 45 și 60 de minute. Se recomandă un set inițial de 3 ședințe, la interval de o săptămână, pentru a permite corpului să răspundă optim.",
+      "O ședință tipică durează între 50 și 60 de minute. Se recomandă 8-10 ședințe, la interval de o săptămână, pentru a permite corpului să răspundă optim.",
   },
   {
     question: "Este dureroasă?",
@@ -323,7 +323,7 @@ export const FAQ_ITEMS = [
   {
     question: "Câte ședințe sunt recomandate?",
     answer:
-      "Se recomandă un set inițial de 3 ședințe, la interval de o săptămână. Multe persoane observă îmbunătățiri deja din prima ședință. Corpul continuă să răspundă terapiei până la 10 zile după ședință. Ulterior, frecvența se adaptează nevoilor tale.",
+      "Se recomandă 8-10 ședințe, la interval de o săptămână. Multe persoane observă îmbunătățiri deja din prima ședință. Corpul continuă să răspundă terapiei până la 10 zile după ședință. Ulterior, frecvența se adaptează nevoilor tale.",
   },
 ] as const;
 

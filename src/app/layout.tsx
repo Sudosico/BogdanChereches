@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     "relaxare",
     "dureri de spate",
     "stres",
+    "recuperare sportivă",
+    "recuperare după accidentări",
     "Bogdan Cherecheș",
   ],
   robots: { index: true, follow: true },

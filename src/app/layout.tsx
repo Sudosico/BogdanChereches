@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { inter, display } from "@/lib/fonts";
 import { LenisProvider } from "@/providers/LenisProvider";
 import { ConversionTracker } from "@/components/ConversionTracker";
+import { MarketingScripts } from "@/components/MarketingScripts";
 import { SEO, CONTACT } from "@/lib/constants";
 import "./globals.css";
 
@@ -113,6 +116,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-ivory text-navy">
         <ConversionTracker />
         <LenisProvider>{children}</LenisProvider>
+        <Analytics />
+        <SpeedInsights />
+        <MarketingScripts />
       </body>
     </html>
   );

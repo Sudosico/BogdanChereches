@@ -1,6 +1,7 @@
-// Provider-agnostic conversion tracking. Every function is a safe no-op until
-// the owner adds GA4 (gtag), Google Tag Manager (dataLayer) or Meta Pixel (fbq).
-// Wiring the events now means conversions are measured from day one of ads.
+// Provider-agnostic conversion tracking. Sends each contact tap to whatever is
+// connected: Vercel Analytics (always, once enabled in the dashboard), GA4
+// (gtag), Google Tag Manager (dataLayer) and Meta Pixel (fbq) when present.
+import { track as vercelTrack } from "@vercel/analytics";
 
 type Channel = "whatsapp" | "messenger" | "phone";
 
@@ -14,6 +15,9 @@ export function trackContactClick(channel: Channel, location = "unknown") {
   if (typeof window === "undefined") return;
   const w = window as unknown as WindowWithTrackers;
   const eventName = `${channel}_click`;
+
+  // Vercel Web Analytics — custom event (shows in the Analytics tab)
+  vercelTrack(eventName, { channel, location });
 
   // GA4
   w.gtag?.("event", eventName, { cta_location: location, channel });

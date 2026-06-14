@@ -30,6 +30,19 @@ npm run start    # servește build-ul de producție
 
 Vezi `.env.example`.
 
+## Analytics & tracking
+
+Site-ul are tracking integrat. Toate tap-urile pe WhatsApp/Messenger/telefon trimit un eveniment `whatsapp_click` / `messenger_click` / `phone_click` (cu eticheta locului: navbar, hero, funnel, floating, mobile-sticky etc.).
+
+**1. Vercel Analytics + Speed Insights (gratis, fără cont, fără cookie banner)** — deja instalate.
+→ În Vercel: tab-ul **Analytics** → **Enable**, și tab-ul **Speed Insights** → **Enable**. Gata: vezi trafic, pagini, surse, dispozitive, Core Web Vitals și evenimentele de conversie.
+
+**2. GA4 (opțional, mai detaliat)** — creezi o proprietate pe [analytics.google.com](https://analytics.google.com), iei ID-ul `G-XXXXXXXXXX` și îl pui în Vercel → Settings → Environment Variables → `NEXT_PUBLIC_GA_ID`. Se încarcă automat și primește aceleași evenimente.
+
+**3. Meta Pixel (opțional, pentru reclame FB/Instagram)** — pui `NEXT_PUBLIC_FB_PIXEL_ID` ca env var. Trimite eveniment standard „Contact".
+
+După ce setezi un env var nou în Vercel → **Redeploy**.
+
 ## De completat înainte de lansare (date de la Bogdan)
 
 - Poză reală cu Bogdan → înlocuiește slotul rezervat din secțiunea „Despre".

@@ -201,6 +201,12 @@ export const ABOUT = {
     "Fiecare ședință este adaptată nevoilor individuale, într-un cadru liniștit și profesional, unde atenția este îndreptată exclusiv către tine.",
     "Filosofia sa se bazează pe răbdare, ascultare și respect pentru ritmul natural al corpului fiecărei persoane.",
   ],
+  credential: {
+    title: "Diplomă de Proficiență în Tehnica Bowen",
+    issuer: "Bowen Therapy Academy of Australia (BOWTECH®)",
+    year: "2024",
+    note: "Format după metoda originală Bowen, dezvoltată în Australia",
+  },
 } as const;
 
 export const HOW_TO_START = {

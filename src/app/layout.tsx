@@ -88,6 +88,20 @@ function LocalBusinessSchema() {
       },
       availability: "https://schema.org/InStock",
     },
+    founder: {
+      "@type": "Person",
+      name: "Bogdan Cherecheș",
+      jobTitle: "Terapeut Bowen",
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Diploma of Proficiency",
+        name: "Bowen Therapeutic Technique",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Bowen Therapy Academy of Australia (BOWTECH)",
+        },
+      },
+    },
   };
 
   return (

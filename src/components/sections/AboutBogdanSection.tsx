@@ -7,7 +7,7 @@ import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { BreathingPulse } from "@/components/animations/BreathingPulse";
 
 import { ABOUT, IMAGES, CONTACT, waLink } from "@/lib/constants";
-import { Leaf } from "lucide-react";
+import { Award, BadgeCheck } from "lucide-react";
 
 function SocialIcon({
   href,
@@ -54,10 +54,12 @@ export function AboutBogdanSection() {
               duration={5}
             >
               <div className="bg-white rounded-2xl shadow-xl shadow-sage/5 p-5 border border-sage/5">
-                <Leaf className="w-6 h-6 text-sage mb-1" />
-                <p className="text-sm font-semibold text-navy">Terapie Bowen</p>
+                <BadgeCheck className="w-6 h-6 text-sage mb-1" />
+                <p className="text-sm font-semibold text-navy">
+                  Certificat BOWTECH®
+                </p>
                 <p className="text-[11px] text-muted-foreground">
-                  Șimleu Silvaniei & Zalău
+                  Diplomă de Proficiență, 2024
                 </p>
               </div>
             </BreathingPulse>
@@ -87,6 +89,26 @@ export function AboutBogdanSection() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Credential */}
+          <ScrollReveal delay={0.25}>
+            <div className="mt-8 flex items-start gap-4 bg-white rounded-2xl p-5 border border-sage/10 shadow-sm shadow-sage/5">
+              <div className="w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center shrink-0">
+                <Award className="w-6 h-6 text-sage" />
+              </div>
+              <div>
+                <p className="font-semibold text-navy">
+                  {ABOUT.credential.title}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {ABOUT.credential.issuer} · {ABOUT.credential.year}
+                </p>
+                <p className="text-xs text-sage mt-0.5">
+                  {ABOUT.credential.note}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
 
           {/* Quote */}
           <ScrollReveal delay={0.3}>

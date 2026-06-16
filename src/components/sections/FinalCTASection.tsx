@@ -14,11 +14,21 @@ export function FinalCTASection() {
   const [funnelOpen, setFunnelOpen] = useState(false);
 
   return (
-    <SectionWrapper dark className="text-center">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,124,111,0.15),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(196,149,106,0.08),transparent_50%)]" />
-      <div className="absolute inset-0 noise-texture opacity-30" />
-
+    <SectionWrapper
+      dark
+      className="text-center"
+      bgLayer={
+        <>
+          {/* Full-section vertical gradient: lighter forest at top → deep
+              forest at the base, so the whole section reads as one gradient. */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#1C3A30_0%,#16271F_50%,#0E1B15_100%)]" />
+          {/* Cool sage glow up top, warm honey glow at the bottom for depth. */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(111,156,138,0.18),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_100%,rgba(190,138,62,0.13),transparent_70%)]" />
+          <div className="absolute inset-0 noise-texture opacity-30" />
+        </>
+      }
+    >
       <div className="relative z-10 max-w-3xl mx-auto">
         <BlurFadeIn blur={20}>
           <div className="w-20 h-20 rounded-full bg-sage/10 backdrop-blur-sm border border-sage/10 flex items-center justify-center mx-auto mb-8">

@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { BreathingPulse } from "@/components/animations/BreathingPulse";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import Image from "next/image";
 
 import { ABOUT, IMAGES, CONTACT, waLink } from "@/lib/constants";
 import { Award, BadgeCheck } from "lucide-react";
@@ -32,6 +35,8 @@ function SocialIcon({
 }
 
 export function AboutBogdanSection() {
+  const [diplomaOpen, setDiplomaOpen] = useState(false);
+
   return (
     <SectionWrapper id="despre" className="bg-cream/40">
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -92,8 +97,12 @@ export function AboutBogdanSection() {
 
           {/* Credential */}
           <ScrollReveal delay={0.25}>
-            <div className="mt-8 flex items-start gap-4 bg-white rounded-2xl p-5 border border-sage/10 shadow-sm shadow-sage/5">
-              <div className="w-11 h-11 rounded-xl bg-sage/10 flex items-center justify-center shrink-0">
+            <button
+              type="button"
+              onClick={() => setDiplomaOpen(true)}
+              className="w-full mt-8 flex items-start gap-4 bg-white rounded-2xl p-5 border border-sage/10 shadow-sm shadow-sage/5 hover:border-sage/30 hover:shadow-md hover:shadow-sage/5 transition-all duration-300 text-left group cursor-pointer"
+            >
+              <div className="w-11 h-11 rounded-xl bg-sage/10 group-hover:bg-sage/20 flex items-center justify-center shrink-0 transition-colors">
                 <Award className="w-6 h-6 text-sage" />
               </div>
               <div>
@@ -107,15 +116,32 @@ export function AboutBogdanSection() {
                   {ABOUT.credential.note}
                 </p>
               </div>
-            </div>
+            </button>
           </ScrollReveal>
+
+          <Dialog open={diplomaOpen} onOpenChange={setDiplomaOpen}>
+            <DialogContent className="max-w-sm p-3">
+              <div className="relative w-full aspect-[3/4]">
+                <Image
+                  src="/images/diploma-bowtech.webp"
+                  alt="Diplomă de Proficiență BOWTECH® - Bogdan Cherecheș, decembrie 2024"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 90vw, 384px"
+                  className="object-contain rounded-lg"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
 
           {/* Quote */}
           <ScrollReveal delay={0.3}>
             <div className="editorial-quote mt-8 py-1">
               <p className="text-navy text-lg leading-relaxed italic font-medium">
-                &ldquo;Cred în puterea atingerii blânde și a pauzei. Corpul știe
-                ce are de făcut, uneori are nevoie doar de puțin sprijin.&rdquo;
+                &ldquo;Cred în puterea terapiei Bowen și în activarea
+                auto-vindecării corpului, a minții și a sistemului nervos.
+                Corpul știe ce are de făcut, uneori are nevoie doar de puțin
+                sprijin.&rdquo;
               </p>
             </div>
           </ScrollReveal>

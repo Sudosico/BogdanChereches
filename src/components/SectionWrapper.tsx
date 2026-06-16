@@ -6,6 +6,12 @@ interface SectionWrapperProps {
   className?: string;
   id?: string;
   dark?: boolean;
+  /**
+   * Full-bleed background layer rendered behind the content, spanning the
+   * entire section (not clamped to the max-w-7xl content column). Use for
+   * section-wide gradients, glows or textures.
+   */
+  bgLayer?: ReactNode;
 }
 
 export function SectionWrapper({
@@ -13,6 +19,7 @@ export function SectionWrapper({
   className,
   id,
   dark = false,
+  bgLayer,
 }: SectionWrapperProps) {
   return (
     <section
@@ -23,6 +30,7 @@ export function SectionWrapper({
         className
       )}
     >
+      {bgLayer}
       <div className="relative mx-auto max-w-7xl">{children}</div>
     </section>
   );

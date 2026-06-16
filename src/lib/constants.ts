@@ -60,16 +60,16 @@ export const HERO = {
 export const TRUST_STATS = [
   { value: 50, suffix: "-60 min", label: "Durată ședință" },
   { value: 100, suffix: "%", label: "Non-invaziv" },
-  { value: 8, suffix: "-10 ședințe", label: "Recomandate" },
-  { value: 10, suffix: " zile", label: "Efectul continuă după ședință" },
+  { value: 10, suffix: "+ ședințe", label: "Recomandate · una pe săptămână" },
+  { value: 6, suffix: " luni+", label: "Efectul continuă după tratament" },
 ] as const;
 
 export const WHAT_IS_BOWEN = {
   title: "Ce este Terapia Bowen?",
   description:
-    "Corpul tău funcționează cel mai bine când e relaxat. Dar stresul, oboseala și tensiunile zilnice îl blochează într-o stare de alertă continuă. Terapia Bowen folosește mișcări blânde și precise care transmit semnale subtile sistemului nervos, fără manipulări agresive, fără durere.",
+    "Corpul tău funcționează cel mai bine când e relaxat. Dar stresul, oboseala și tensiunile zilnice îl blochează într-o stare de alertă continuă. Terapia Bowen folosește mișcări blânde și precise care transmit semnale subtile minții, corpului și sistemului nervos, fără manipulări agresive, fără durere.",
   highlight:
-    "Pauzele dintre mișcări sunt la fel de importante ca mișcările. În acele momente de liniște, corpul tău procesează informația primită și își activează propriile mecanisme de reechilibrare. Este ca un reset blând pentru întregul organism.",
+    "Pauzele dintre mișcări sunt la fel de importante ca mișcările. În acele momente de liniște, corpul tău procesează informația primită și își activează propriile mecanisme de auto-vindecare și reechilibrare. Este ca un reset blând pentru întregul organism.",
   timeline: [
     {
       step: "01",
@@ -197,15 +197,16 @@ export const WHO_CHOOSES = {
 export const ABOUT = {
   title: "Despre Bogdan Cherecheș",
   paragraphs: [
-    "Cu o abordare calmă și atentă, Bogdan Cherecheș oferă ședințe de Terapie Bowen personalizate în Zalău și Șimleu Silvaniei.",
-    "Fiecare ședință este adaptată nevoilor individuale, într-un cadru liniștit și profesional, unde atenția este îndreptată exclusiv către tine.",
-    "Filosofia sa se bazează pe răbdare, ascultare și respect pentru ritmul natural al corpului fiecărei persoane.",
+    "La Bowen am ajuns din nevoie, nu din curiozitate. Aveam mâna stângă afectată de suprasolicitare, îmi cedaseră nervii, și încercasem destule fără rezultat. Bowen m-a pus din nou pe picioare și m-a convins atât de tare încât am vrut să învăț să fac și eu asta pentru alții.",
+    "Nu porneam de la zero. Am terminat Facultatea de Sport, specializarea Kinetoterapie, în 2012, și am lucrat ani la rând ca kinetoterapeut și instructor de fitness. Cunoșteam deja corpul, dar Bowen mi-a arătat o cale mult mai blândă de a-l ajuta.",
+    "De aproape doi ani lucrez exclusiv cu Bowen și am trecut de 400 de oameni. Cei mai mulți vin pentru recuperare după fracturi, dureri de spate și de articulații, accidentări la sport sau după un AVC. Alții vin pentru stres, anxietate sau burnout, fiindcă au ajuns pur și simplu la capătul puterilor.",
+    "Și schimbarea chiar se vede. Durerile de spate și de articulații dispar de obicei în 8-10 ședințe. Sportivii se întorc la antrenamente după vreo zece. Iar la cei care au trecut printr-un AVC am văzut cum își recapătă treptat mișcarea pe partea afectată și se refac vizibil mai repede. De asta cred în ceea ce fac.",
   ],
   credential: {
     title: "Diplomă de Proficiență în Tehnica Bowen",
     issuer: "Bowen Therapy Academy of Australia (BOWTECH®)",
     year: "2024",
-    note: "Format după metoda originală Bowen, dezvoltată în Australia",
+    note: "Apasă pentru a vedea diploma · Emisă pe 11 decembrie 2024",
   },
 } as const;
 
@@ -238,7 +239,7 @@ export const HOW_TO_START = {
 } as const;
 
 export const LOCATIONS = {
-  title: "Unde ne găsești",
+  title: "Unde mă găsești",
   cards: [
     {
       city: "Zalău",
@@ -309,7 +310,7 @@ export const FAQ_ITEMS = [
   {
     question: "Cât durează o ședință?",
     answer:
-      "O ședință tipică durează între 50 și 60 de minute. Se recomandă 8-10 ședințe, la interval de o săptămână, pentru a permite corpului să răspundă optim.",
+      "O ședință tipică durează între 50 și 60 de minute. Se recomandă peste 10 ședințe, câte una pe săptămână, pentru a permite corpului să răspundă optim.",
   },
   {
     question: "Este dureroasă?",
@@ -329,7 +330,7 @@ export const FAQ_ITEMS = [
   {
     question: "Câte ședințe sunt recomandate?",
     answer:
-      "Se recomandă 8-10 ședințe, la interval de o săptămână. Multe persoane observă îmbunătățiri deja din prima ședință. Corpul continuă să răspundă terapiei până la 10 zile după ședință. Ulterior, frecvența se adaptează nevoilor tale.",
+      "Se recomandă peste 10 ședințe, câte una pe săptămână. Multe persoane observă îmbunătățiri deja din prima ședință. Corpul continuă să răspundă terapiei mult timp după aceea, iar efectele se pot simți chiar și după jumătate de an. Ulterior, frecvența se adaptează nevoilor tale.",
   },
 ] as const;
 

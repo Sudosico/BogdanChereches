@@ -6,20 +6,32 @@
 - **Tratament:** culori naturale calde (NU alb-negru). Fără text, fără logo-uri, fără watermark.
 - Imaginile noi stau lângă camere de tratament + naturi statice deja generate, în aceeași paletă — consistența contează.
 
-## Sloturi de imagine pe site (status + ce ar ajuta)
+## CHEATSHEET — toate sloturile de poze
 
-| Secțiune | Fișier | Acum | Ce ar fi ideal | Aspect / dimensiune |
-|---|---|---|---|---|
-| **Despre Bogdan** (portret) | `bogdan-placeholder.jpg` | **slot gol rezervat** | **PRIORITAR: poză reală cu Bogdan** — portret cald, calm, de încredere, în cabinet sau fundal neutru | **3:4 portret**, ~1200×1600 |
-| **Hero** (fundal full-bleed) | `hero-v2.jpg` | cameră de tratament (generată) | opțional: cabinetul real sau Bogdan în timpul unei mișcări (cadru lat). E întunecat de overlay, deci merge și ambient | **16:10 landscape**, ~1920×1200 |
-| **„Ce este Bowen"** | `session-v2.jpg` | natură statică (generată) | opțional: un moment real de ședință / detaliu blând | **4:5 portret**, ~1200×1500 |
-| **„Cum se simte" (bento)** | `feel-v2.jpg` | natură statică (generată) | opțional: detaliu cald, mâini blânde pe spate, pătură | **4:5 portret**, ~1200×1500 |
-| **Locație Zalău** | `room-v2.jpg` | cameră (generată) | opțional: **cabinetul real din Zalău** | **16:10 landscape**, ~1200×750 |
-| **Locație Șimleu** | — (hartă Google) | hartă reală | opțional: **cabinetul real din Șimleu** ca alternativă/completare | 16:10 |
-| Diplomă | `diploma-bowtech.webp` | **reală, clickabilă** ✅ | — | — |
-| Trust badges / stats / WhoChooses / HowToStart / FAQ / FinalCTA | — | iconițe / gradient | nu au nevoie de poze | — |
+Total: **6 sloturi distincte de poză** (+ diploma = gata, + OG = auto-generat). Doar **1 e gol** acum (portretul). Restul sunt deja umplute cu imagini generate care arată bine — pot fi înlocuite opțional cu poze reale.
 
-**Cel mai mare câștig:** portretul real al lui Bogdan în secțiunea „Despre". Restul sunt bonus.
+| # | Slot | Apare pe | Fișier (în `public/images/`) | Acum | Raport | Pixeli | Prioritate |
+|---|---|---|---|---|---|---|---|
+| 1 | **Portret Bogdan** | Acasă (Despre) + `/despre` | `bogdan-placeholder.jpg` → `bogdan.jpg` | **GOL** (slot rezervat) | **3:4 vertical** | 1200×1600 | 🔴 **Obligatoriu** |
+| 2 | **Hero** (fundal full-bleed, întunecat de overlay) | Acasă (sus) | `hero-v2.jpg` | cameră generată | **3:2 orizontal** | 1800×1200 | 🟡 Opțional (bonus mare dacă e Bogdan/cabinetul real) |
+| 3 | **„Ce este Bowen"** | Acasă | `session-v2.jpg` | natură statică generată | **4:5 vertical** | 1200×1500 | 🟢 Opțional |
+| 4 | **„Cum se simte" (bento)** | Acasă | `feel-v2.jpg` | natură statică generată | **4:5 vertical** | 1200×1500 | 🟢 Opțional |
+| 5 | **Locație Zalău** | Acasă (Locații) + `/contact` | `room-v2.jpg` | cameră generată | **16:10 orizontal** | 1280×800 | 🟢 Opțional (cabinetul real) |
+| 6 | **Locație Șimleu** | Acasă (Locații) + `/contact` | — (hartă Google) | hartă reală ✅ | 16:10 | 1280×800 | ⚪ Doar dacă vrei poză în loc de hartă |
+| — | **Diplomă** | Acasă (Despre, la click) | `diploma-bowtech.webp` | **reală** ✅ | 3:4 | — | ✅ gata |
+| — | **OG image** (share social) | meta (FB/WhatsApp) | `og-image.jpg` | auto din hero | 1.91:1 | 1200×630 | auto (îl regenerez dacă schimbi hero) |
+
+**Fără poze (corect așa):** Trust badges, Statistici, „Pentru cine", „3 pași", FAQ, CTA final, toate Subpage-hero-urile (gradient), pagina `/ce-este-bowen` (carduri cu iconițe).
+
+## Unde am PUTEA adăuga poze (dacă vrei mai mult, nu e necesar)
+- **Testimoniale** — acum sunt inițiale în cerc. Poze reale de clienți (cu acordul lor) ar crește încrederea. Pătrat 1:1, ~400×400.
+- **`/ce-este-bowen`** — momentan doar iconițe; un cadru real de ședință ar încălzi pagina. 4:5 sau 16:9.
+- **Galerie „cabinet"** — opțional, 2-4 poze din cabinet, dacă vrei o secțiune nouă.
+
+## Răspuns scurt la „mai trebuie?"
+**Strict necesar: 1 poză** — portretul lui Bogdan (slot #1). Atât. Restul site-ului e complet și arată bine cu imaginile generate. Sloturile 2-5 sunt upgrade-uri opționale (înlocuiești o imagine generată cu una reală), iar 6 + testimonialele sunt „nice to have".
+
+> Notă tehnică: în `constants.ts → IMAGES` există 4 intrări nefolosite (`clinic1`, `clinic2`, `locationSimleu`, `locationZalau`) — rămase din varianta veche, nu se afișează nicăieri. Le pot șterge la curățenie.
 
 ---
 

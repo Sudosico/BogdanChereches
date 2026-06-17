@@ -50,8 +50,8 @@ export function SessionFeelSection() {
         <ScrollReveal className="md:col-span-2 lg:col-span-1 lg:row-span-2">
           <div className="group relative rounded-3xl overflow-hidden h-full min-h-[340px] lg:min-h-[440px]">
             <Image
-              src="/images/feel-v2.jpg"
-              alt="Detaliu calm dintr-o ședință de terapie Bowen"
+              src="/images/feel-v3.jpg"
+              alt="Mișcări blânde de terapie Bowen pe spate, într-o ședință relaxantă"
               fill
               className="img-forest object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 33vw"

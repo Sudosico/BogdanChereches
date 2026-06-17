@@ -18,7 +18,7 @@ export function WhatIsBowenSection() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <ImagePlaceholder
                 src={IMAGES.session}
-                alt="Pătură și detalii calde dintr-un cadru de terapie Bowen"
+                alt="Bogdan Cherecheș aplicând mișcări blânde de terapie Bowen la nivelul capului și gâtului"
                 fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />

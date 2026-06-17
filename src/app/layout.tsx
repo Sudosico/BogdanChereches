@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     "stres",
     "recuperare sportivă",
     "recuperare după accidentări",
+    "recuperare după AVC",
+    "kinetoterapeut Zalău",
+    "Bowen Sălaj",
     "Bogdan Cherecheș",
   ],
   robots: { index: true, follow: true },
@@ -92,6 +95,20 @@ function LocalBusinessSchema() {
       "@type": "Person",
       name: "Bogdan Cherecheș",
       jobTitle: "Terapeut Bowen",
+      description:
+        "Kinetoterapeut (Facultatea de Sport, specializarea Kinetoterapie, 2012) și terapeut Bowen certificat BOWTECH, cu peste 400 de persoane ajutate.",
+      knowsAbout: [
+        "Terapie Bowen",
+        "Kinetoterapie",
+        "recuperare după accidentări",
+        "dureri de spate și articulații",
+        "recuperare după AVC",
+        "managementul stresului",
+      ],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Facultatea de Educație Fizică și Sport - Kinetoterapie",
+      },
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "Diploma of Proficiency",

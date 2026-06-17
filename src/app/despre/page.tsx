@@ -10,13 +10,13 @@ import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { FloatingElement } from "@/components/animations/FloatingElement";
 import { CTAButton } from "@/components/CTAButton";
 
-import { CONTACT, IMAGES, waLink } from "@/lib/constants";
+import { ABOUT, CONTACT, IMAGES, waLink } from "@/lib/constants";
 import { Heart, Users, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Despre Bogdan Cherecheș | Terapie Bowen",
   description:
-    "Află mai multe despre Bogdan Cherecheș, terapeut Bowen în Șimleu Silvaniei și Zalău. Abordare calmă, atentă și personalizată.",
+    "Bogdan Cherecheș, kinetoterapeut și terapeut Bowen certificat BOWTECH în Zalău și Șimleu Silvaniei. Peste 400 de oameni ajutați cu recuperare, dureri de spate și stres.",
 };
 
 const VALUES = [
@@ -24,19 +24,19 @@ const VALUES = [
     icon: Heart,
     title: "Empatie și răbdare",
     description:
-      "Fiecare persoană este unică. Bogdan ascultă cu atenție și adaptează fiecare ședință nevoilor tale.",
+      "Fiecare persoană este unică. Ascult cu atenție și adaptez fiecare ședință la nevoile tale.",
   },
   {
     icon: Users,
     title: "Atenție individuală",
     description:
-      "Ședințele sunt unul la unul, într-un cadru liniștit și profesional, unde atenția este îndreptată exclusiv către tine.",
+      "Ședințele sunt unul la unul, într-un cadru liniștit și profesional, unde atenția mea este îndreptată exclusiv către tine.",
   },
   {
     icon: Leaf,
     title: "Respect pentru corp",
     description:
-      "Filosofia sa se bazează pe respect pentru ritmul natural al corpului fiecărei persoane, fără forțare.",
+      "Lucrez cu respect pentru ritmul natural al corpului tău, fără forțare.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function DesprePagee() {
         <SubpageHero
           label="Terapeut Bowen"
           title="Despre Bogdan Cherecheș"
-          description="Cu o abordare calmă și atentă, Bogdan oferă ședințe de Terapie Bowen personalizate."
+          description="Am ajuns la Bowen din nevoie. Acum îl practic în Zalău și Șimleu Silvaniei, cu ședințe blânde și personalizate."
         />
 
         {/* Profile */}
@@ -61,6 +61,7 @@ export default function DesprePagee() {
                     src={IMAGES.bogdan}
                     alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
                     fill
+                    quality={90}
                   />
                 </div>
                 <FloatingElement
@@ -89,26 +90,16 @@ export default function DesprePagee() {
               </BlurFadeIn>
 
               <div className="space-y-5">
-                <ScrollReveal>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    Bogdan Cherecheș practică Terapia Bowen în Șimleu Silvaniei
-                    și Zalău, cu convingerea că fiecare corp are capacitatea de
-                    a se reechilibra atunci când primește sprijinul potrivit.
-                  </p>
-                </ScrollReveal>
-                <ScrollReveal delay={0.1}>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    Fiecare ședință este un moment dedicat ție, un spațiu de
-                    liniște în care corpul tău primește atenția de care are
-                    nevoie. Nu există abordare standard, ci doar răspunsul
-                    personalizat la ceea ce simți tu.
-                  </p>
-                </ScrollReveal>
-                <ScrollReveal delay={0.2}>
+                {ABOUT.paragraphs.map((p, i) => (
+                  <ScrollReveal key={i} delay={i * 0.1}>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {p}
+                    </p>
+                  </ScrollReveal>
+                ))}
+                <ScrollReveal delay={0.3}>
                   <p className="text-navy font-medium text-lg leading-relaxed pl-4 border-l-2 border-earth">
-                    &ldquo;Cred în puterea atingerii blânde și a pauzei. Corpul
-                    știe ce are de făcut, uneori are nevoie doar de puțin
-                    sprijin.&rdquo;
+                    &ldquo;{ABOUT.quote}&rdquo;
                   </p>
                 </ScrollReveal>
               </div>
@@ -152,8 +143,8 @@ export default function DesprePagee() {
                 Hai să ne cunoaștem
               </h2>
               <p className="text-white/60 text-lg mb-8">
-                Contactează-l pe Bogdan și discută despre cum te poate ajuta
-                Terapia Bowen.
+                Scrie-mi și hai să vedem împreună cum te poate ajuta Terapia
+                Bowen.
               </p>
             </BlurFadeIn>
             <ScrollReveal>

@@ -39,6 +39,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp", "image/avif"],
+    // 75 = Next default for most photos; 90 reserved for the hero portrait of
+    // Bogdan so the face stays crisp (must be allowlisted in Next 16).
+    qualities: [75, 90],
   },
   poweredByHeader: false,
   compress: true,

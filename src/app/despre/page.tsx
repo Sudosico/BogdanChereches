@@ -59,7 +59,7 @@ export default function DesprePagee() {
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden">
                   <ImagePlaceholder
                     src={IMAGES.bogdan}
-                    alt="Bogdan Cherecheș"
+                    alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
                     fill
                   />
                 </div>

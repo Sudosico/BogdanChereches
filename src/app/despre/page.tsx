@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Despre Bogdan Cherecheș | Terapie Bowen",
   description:
     "Bogdan Cherecheș, kinetoterapeut și terapeut Bowen certificat BOWTECH în Zalău și Șimleu Silvaniei. Peste 400 de oameni ajutați cu recuperare, dureri de spate și stres.",
+  alternates: { canonical: "/despre" },
 };
 
 const VALUES = [

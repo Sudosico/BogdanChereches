@@ -591,7 +591,7 @@ export default function CeEsteBowen() {
                   m-a trimis la Bogdan. Trei ședințe mai târziu, mă mișcam din
                   nou fără durere.&rdquo;
                   <span className="block mt-3 not-italic text-sm text-muted-foreground">
-                    Cristian L., Zalău
+                    Cristian Lazăr, Primarul orașului Șimleu Silvaniei
                   </span>
                 </blockquote>
               </ScrollReveal>

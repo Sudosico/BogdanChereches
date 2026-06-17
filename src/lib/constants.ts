@@ -284,8 +284,8 @@ export const TESTIMONIALS = {
       rating: 5,
     },
     {
-      name: "Cristian L.",
-      location: "Zalău",
+      name: "Cristian Lazăr",
+      location: "Primarul orașului Șimleu Silvaniei",
       text: "După un accident la schi, nimic nu mă ajuta. Un prieten m-a trimis la Bogdan. Trei ședințe mai târziu, mă mișcam din nou fără durere.",
       rating: 5,
     },

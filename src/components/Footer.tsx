@@ -91,6 +91,7 @@ export function Footer() {
               {FOOTER.disclaimer}
             </p>
             <p className="text-xs text-white/25">{FOOTER.copyright}</p>
+            <p className="text-xs text-white/20 mt-1">Made by Răzvan Gheție</p>
           </div>
           <Link
             href="/confidentialitate"

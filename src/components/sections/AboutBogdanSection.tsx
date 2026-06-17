@@ -48,6 +48,7 @@ export function AboutBogdanSection() {
                 src={IMAGES.bogdan}
                 alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
                 fill
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/25 to-transparent" />
             </div>
@@ -138,10 +139,7 @@ export function AboutBogdanSection() {
           <ScrollReveal delay={0.3}>
             <div className="editorial-quote mt-8 py-1">
               <p className="text-navy text-lg leading-relaxed italic font-medium">
-                &ldquo;Cred în puterea terapiei Bowen și în activarea
-                auto-vindecării corpului, a minții și a sistemului nervos.
-                Corpul știe ce are de făcut, uneori are nevoie doar de puțin
-                sprijin.&rdquo;
+                &ldquo;{ABOUT.quote}&rdquo;
               </p>
             </div>
           </ScrollReveal>

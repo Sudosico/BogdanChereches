@@ -202,6 +202,8 @@ export const ABOUT = {
     "De aproape doi ani lucrez exclusiv cu Bowen și am trecut de 400 de oameni. Cei mai mulți vin pentru recuperare după fracturi, dureri de spate și de articulații, accidentări la sport sau după un AVC. Alții vin pentru stres, anxietate sau burnout, fiindcă au ajuns pur și simplu la capătul puterilor.",
     "Și schimbarea chiar se vede. Durerile de spate și de articulații dispar de obicei în 8-10 ședințe. Sportivii se întorc la antrenamente după vreo zece. Iar la cei care au trecut printr-un AVC am văzut cum își recapătă treptat mișcarea pe partea afectată și se refac vizibil mai repede. De asta cred în ceea ce fac.",
   ],
+  quote:
+    "Cred în puterea terapiei Bowen și în activarea auto-vindecării corpului, a minții și a sistemului nervos. Corpul știe ce are de făcut, uneori are nevoie doar de puțin sprijin.",
   credential: {
     title: "Diplomă de Proficiență în Tehnica Bowen",
     issuer: "Bowen Therapy Academy of Australia (BOWTECH®)",
@@ -371,7 +373,7 @@ export const FOOTER = {
 export const SEO = {
   title: "Terapie Bowen Zalău și Șimleu Silvaniei | Bogdan Cherecheș",
   description:
-    "Terapie Bowen în Zalău și Șimleu Silvaniei cu Bogdan Cherecheș. Ședințe blânde pentru dureri de spate, stres, recuperare și relaxare profundă. Programare rapidă pe WhatsApp.",
+    "Terapie Bowen blândă în Zalău și Șimleu Silvaniei cu Bogdan Cherecheș, kinetoterapeut. Pentru dureri de spate și articulații, recuperare după accidentări și stres. Scrie pe WhatsApp.",
   // Set NEXT_PUBLIC_SITE_URL in Vercel to your live domain so canonical / OG /
   // sitemap all point to the real address. Falls back to the planned domain.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://bowenbogdan.ro",

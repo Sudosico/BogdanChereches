@@ -12,6 +12,7 @@ interface ImagePlaceholderProps {
   width?: number;
   height?: number;
   priority?: boolean;
+  quality?: number;
 }
 
 export function ImagePlaceholder({
@@ -22,6 +23,7 @@ export function ImagePlaceholder({
   width,
   height,
   priority = false,
+  quality,
 }: ImagePlaceholderProps) {
   const isPlaceholder = src.includes("placeholder");
   // The portrait must be the real Bogdan — never a generated face. Show a clean
@@ -96,6 +98,7 @@ export function ImagePlaceholder({
         fill
         className={cn("img-forest object-cover", className)}
         priority={priority}
+        quality={quality}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
       />
     </div>
@@ -108,6 +111,7 @@ export function ImagePlaceholder({
         height={height}
         className={cn("img-forest", className)}
         priority={priority}
+        quality={quality}
       />
     </div>
   );

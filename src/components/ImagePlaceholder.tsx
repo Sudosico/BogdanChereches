@@ -25,8 +25,9 @@ export function ImagePlaceholder({
 }: ImagePlaceholderProps) {
   const isPlaceholder = src.includes("placeholder");
   // The portrait must be the real Bogdan — never a generated face. Show a clean
-  // reserved slot until his photo is supplied.
-  const isPersonSlot = src.includes("bogdan");
+  // reserved slot only while his photo is still a placeholder; the real file
+  // (/images/bogdan.jpg) renders as normal photography below.
+  const isPersonSlot = src.includes("bogdan") && src.includes("placeholder");
 
   // Reserved slot for a real person photo: clean, intentional empty frame.
   if (isPersonSlot) {

@@ -46,7 +46,7 @@ export function AboutBogdanSection() {
             <div className="aspect-[3/4] rounded-3xl overflow-hidden relative">
               <ImagePlaceholder
                 src={IMAGES.bogdan}
-                alt="Bogdan Cherecheș"
+                alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
                 fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/25 to-transparent" />

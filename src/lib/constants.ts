@@ -34,7 +34,7 @@ export const REASSURANCE = [
 // branded placeholders until real photos of Bogdan and the rooms are supplied.
 export const IMAGES = {
   hero: "/images/hero-v2.jpg",
-  session: "/images/session-v2.jpg",
+  session: "/images/session-v3.jpg",
   bogdan: "/images/bogdan.jpg",
   clinic1: "/images/clinic-1-placeholder.jpg",
   clinic2: "/images/clinic-2-placeholder.jpg",

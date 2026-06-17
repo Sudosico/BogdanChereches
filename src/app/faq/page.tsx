@@ -19,7 +19,8 @@ import {
 export const metadata: Metadata = {
   title: "Întrebări frecvente | Bogdan Cherecheș - Terapie Bowen",
   description:
-    "Răspunsuri la cele mai frecvente întrebări despre Terapia Bowen: cum funcționează, cât durează, pentru cine este potrivită.",
+    "Răspunsuri la întrebări despre Terapia Bowen în Zalău și Șimleu Silvaniei: cum funcționează, cât durează o ședință, pentru cine este potrivită și câte ședințe sunt recomandate.",
+  alternates: { canonical: "/faq" },
 };
 
 function FAQSchema() {

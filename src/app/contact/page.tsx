@@ -16,7 +16,8 @@ import { MapPin, Navigation, Phone, Clock, ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact & Locații | Bogdan Cherecheș - Terapie Bowen",
   description:
-    "Contactează-l pe Bogdan Cherecheș pentru programări Bowen în Șimleu Silvaniei și Zalău. WhatsApp, Messenger sau telefon.",
+    "Contactează-l pe Bogdan Cherecheș pentru programări Bowen în Zalău și Șimleu Silvaniei. WhatsApp, Messenger sau telefon. Cabinet în județul Sălaj.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

@@ -129,7 +129,7 @@ const CONDITIONS = [
     icon: Dumbbell,
     title: "Recuperare sportivă",
     description:
-      "Entorse, întinderi, suprasolicitare. Sportivii revin la antrenamente mai repede, fără medicamente, de obicei după aproximativ zece ședințe.",
+      "Entorse, întinderi, suprasolicitare. Sportivii revin la antrenamente mai repede, fără medicamente, de obicei după aproximativ douăzeci de ședințe.",
   },
   {
     icon: RefreshCcw,
@@ -214,7 +214,7 @@ const PAGE_FAQ = [
   {
     question: "Terapia Bowen ajută la recuperarea după accidentări?",
     answer:
-      "Da. Bowen lucrează cu fascia și cu sistemul nervos, așa că poate completa recuperarea după entorse, fracturi consolidate, accidentări la sport sau suprasolicitare. Mulți sportivi revin la antrenamente după aproximativ zece ședințe.",
+      "Da. Bowen lucrează cu fascia și cu sistemul nervos, așa că poate completa recuperarea după entorse, fracturi consolidate, accidentări la sport sau suprasolicitare. Mulți sportivi revin la antrenamente după aproximativ douăzeci de ședințe.",
   },
   {
     question: "În cât timp se văd rezultate?",
@@ -591,7 +591,7 @@ export default function CeEsteBowen() {
                   m-a trimis la Bogdan. Trei ședințe mai târziu, mă mișcam din
                   nou fără durere.&rdquo;
                   <span className="block mt-3 not-italic text-sm text-muted-foreground">
-                    Cristian Lazăr, Primarul orașului Șimleu Silvaniei
+                    Cristian L., Zalău
                   </span>
                 </blockquote>
               </ScrollReveal>

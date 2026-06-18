@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   alternates: { canonical: SEO.url },
+  verification: {
+    google: "thFLB7otsLZRJr7AHxcrZmrp2vVuBo9FZTIWA9aMtCI",
+  },
 };
 
 function LocalBusinessSchema() {

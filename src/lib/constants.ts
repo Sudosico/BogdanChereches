@@ -182,7 +182,7 @@ export const WHO_CHOOSES = {
     {
       title: "Stare generală de bine",
       description:
-        "Nu ai nimic concret, dar simți că ceva lipsește. Bowen reconectează corpul cu echilibrul.",
+        "Nu ai nimic concret, dar simți ceva în neregulă. Bowen reconectează corpul cu echilibrul.",
       icon: "Heart",
     },
   ],
@@ -196,7 +196,7 @@ export const ABOUT = {
     "La Bowen am ajuns din nevoie, nu din curiozitate. Aveam mâna stângă afectată de suprasolicitare, îmi cedaseră nervii, și încercasem destule fără rezultat. Bowen m-a pus din nou pe picioare și m-a convins atât de tare încât am vrut să învăț să fac și eu asta pentru alții.",
     "Nu porneam de la zero. Am terminat Facultatea de Sport, specializarea Kinetoterapie, în 2012, și am lucrat ani la rând ca kinetoterapeut și instructor de fitness. Cunoșteam deja corpul, dar Bowen mi-a arătat o cale mult mai blândă de a-l ajuta.",
     "De aproape doi ani lucrez exclusiv cu Bowen și am trecut de 400 de oameni. Cei mai mulți vin pentru recuperare după fracturi, dureri de spate și de articulații, accidentări la sport sau după un AVC. Alții vin pentru stres, anxietate sau burnout, fiindcă au ajuns pur și simplu la capătul puterilor.",
-    "Și schimbarea chiar se vede. Durerile de spate și de articulații dispar de obicei în 8-10 ședințe. Sportivii se întorc la antrenamente după vreo zece. Iar la cei care au trecut printr-un AVC am văzut cum își recapătă treptat mișcarea pe partea afectată și se refac vizibil mai repede. De asta cred în ceea ce fac.",
+    "Și schimbarea chiar se vede. Durerile de spate și de articulații dispar de obicei în 8-10 ședințe. Sportivii se întorc la antrenamente după vreo douăzeci de ședințe. Iar la cei care au trecut printr-un AVC am văzut cum își recapătă treptat mișcarea pe partea afectată și se recuperează vizibil mai repede. De asta cred în ceea ce fac.",
   ],
   quote:
     "Cred în puterea terapiei Bowen și în activarea auto-vindecării corpului, a minții și a sistemului nervos. Corpul știe ce are de făcut, uneori are nevoie doar de puțin sprijin.",
@@ -280,8 +280,8 @@ export const TESTIMONIALS = {
       rating: 5,
     },
     {
-      name: "Cristian Lazăr",
-      location: "Primarul orașului Șimleu Silvaniei",
+      name: "Cristian L.",
+      location: "Zalău",
       text: "După un accident la schi, nimic nu mă ajuta. Un prieten m-a trimis la Bogdan. Trei ședințe mai târziu, mă mișcam din nou fără durere.",
       rating: 5,
     },

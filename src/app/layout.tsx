@@ -58,10 +58,38 @@ export const metadata: Metadata = {
 };
 
 function LocalBusinessSchema() {
-  const schema = {
-    "@context": "https://schema.org",
+  const founder = {
+    "@type": "Person",
+    name: "Bogdan Cherecheș",
+    jobTitle: "Terapeut Bowen",
+    description:
+      "Kinetoterapeut (Facultatea de Sport, specializarea Kinetoterapie, 2012) și terapeut Bowen certificat BOWTECH, cu peste 400 de persoane ajutate.",
+    knowsAbout: [
+      "Terapie Bowen",
+      "Kinetoterapie",
+      "recuperare după accidentări",
+      "dureri de spate și articulații",
+      "recuperare după AVC",
+      "managementul stresului",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Facultatea de Educație Fizică și Sport - Kinetoterapie",
+    },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Diploma of Proficiency",
+      name: "Bowen Therapeutic Technique",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "Bowen Therapy Academy of Australia (BOWTECH)",
+      },
+    },
+  };
+  // Two physical locations (Zalău + Șimleu Silvaniei) modeled as separate
+  // LocalBusiness nodes so each can rank for its own town.
+  const common = {
     "@type": "HealthAndBeautyBusiness",
-    name: "Bogdan Cherecheș - Terapie Bowen",
     description: SEO.description,
     url: SEO.url,
     telephone: CONTACT.phone,
@@ -69,17 +97,9 @@ function LocalBusinessSchema() {
     image: `${SEO.url}/images/og-image.jpg`,
     knowsLanguage: "ro",
     sameAs: [CONTACT.facebook],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Strada Horea 60",
-      addressLocality: "Șimleu Silvaniei",
-      postalCode: "455300",
-      addressRegion: "Sălaj",
-      addressCountry: "RO",
-    },
     areaServed: [
-      { "@type": "City", name: "Șimleu Silvaniei" },
       { "@type": "City", name: "Zalău" },
+      { "@type": "City", name: "Șimleu Silvaniei" },
     ],
     availableService: {
       "@type": "MedicalTherapy",
@@ -94,34 +114,41 @@ function LocalBusinessSchema() {
       },
       availability: "https://schema.org/InStock",
     },
-    founder: {
-      "@type": "Person",
-      name: "Bogdan Cherecheș",
-      jobTitle: "Terapeut Bowen",
-      description:
-        "Kinetoterapeut (Facultatea de Sport, specializarea Kinetoterapie, 2012) și terapeut Bowen certificat BOWTECH, cu peste 400 de persoane ajutate.",
-      knowsAbout: [
-        "Terapie Bowen",
-        "Kinetoterapie",
-        "recuperare după accidentări",
-        "dureri de spate și articulații",
-        "recuperare după AVC",
-        "managementul stresului",
-      ],
-      alumniOf: {
-        "@type": "CollegeOrUniversity",
-        name: "Facultatea de Educație Fizică și Sport - Kinetoterapie",
-      },
-      hasCredential: {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "Diploma of Proficiency",
-        name: "Bowen Therapeutic Technique",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "Bowen Therapy Academy of Australia (BOWTECH)",
+    founder,
+  };
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...common,
+        "@id": `${SEO.url}/#zalau`,
+        name: "Bogdan Cherecheș - Terapie Bowen Zalău",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Strada Avram Iancu 47",
+          addressLocality: "Zalău",
+          addressRegion: "Sălaj",
+          addressCountry: "RO",
         },
+        hasMap:
+          "https://www.google.com/maps?q=Strada+Avram+Iancu+47,+Zalau,+Romania",
       },
-    },
+      {
+        ...common,
+        "@id": `${SEO.url}/#simleu`,
+        name: "Bogdan Cherecheș - Terapie Bowen Șimleu Silvaniei",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Strada Horea 60",
+          addressLocality: "Șimleu Silvaniei",
+          postalCode: "455300",
+          addressRegion: "Sălaj",
+          addressCountry: "RO",
+        },
+        hasMap:
+          "https://www.google.com/maps?q=Strada+Horea+60,+Simleu+Silvaniei,+Romania",
+      },
+    ],
   };
 
   return (

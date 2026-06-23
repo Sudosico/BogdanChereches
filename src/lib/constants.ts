@@ -241,9 +241,11 @@ export const LOCATIONS = {
   cards: [
     {
       city: "Zalău",
-      address: "Adresa exactă o primești când programezi pe WhatsApp",
-      mapEmbed: "",
-      mapLink: "",
+      address: "Strada Avram Iancu 47, Zalău",
+      mapEmbed:
+        "https://www.google.com/maps?q=Strada+Avram+Iancu+47,+Zalau,+Romania&output=embed",
+      mapLink:
+        "https://www.google.com/maps?q=Strada+Avram+Iancu+47,+Zalau,+Romania",
       image: "/images/room-v2.jpg",
     },
     {
@@ -255,7 +257,7 @@ export const LOCATIONS = {
       image: "/images/location-simleu-placeholder.jpg",
     },
   ],
-} as const;
+};
 
 export const TESTIMONIALS = {
   title: "Ce spun oamenii",

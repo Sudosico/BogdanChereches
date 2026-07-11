@@ -10,52 +10,59 @@ import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { FloatingElement } from "@/components/animations/FloatingElement";
 import { CTAButton } from "@/components/CTAButton";
 
-import { ABOUT, CONTACT, IMAGES, waLink } from "@/lib/constants";
+import { CONTACT, IMAGES, waLink } from "@/lib/constants";
+import { enContent } from "@/lib/content-en";
 import { Heart, Users, Leaf } from "lucide-react";
 
+const base = enContent.SEO.url;
+const ABOUT = enContent.ABOUT;
+
 export const metadata: Metadata = {
-  title: "Despre Bogdan Cherecheș | Terapie Bowen",
+  title: "About Bogdan Cherecheș | Bowen Therapy",
   description:
-    "Bogdan Cherecheș, kinetoterapeut și terapeut Bowen certificat BOWTECH în Zalău și Șimleu Silvaniei. Peste 400 de oameni ajutați cu recuperare, dureri de spate și stres.",
+    "Bogdan Cherecheș, physiotherapist and BOWTECH-certified Bowen therapist in Zalău and Șimleu Silvaniei. Over 400 people helped with recovery, back pain and stress.",
   alternates: {
-    canonical: "/despre",
-    languages: { ro: "/despre", en: "/en/despre", "x-default": "/despre" },
+    canonical: `${base}/en/despre`,
+    languages: {
+      ro: `${base}/despre`,
+      en: `${base}/en/despre`,
+      "x-default": `${base}/despre`,
+    },
   },
 };
 
 const VALUES = [
   {
     icon: Heart,
-    title: "Empatie și răbdare",
+    title: "Empathy and patience",
     description:
-      "Fiecare persoană este unică. Ascult cu atenție și adaptez fiecare ședință la nevoile tale.",
+      "Every person is unique. I listen carefully and adapt each session to your needs.",
   },
   {
     icon: Users,
-    title: "Atenție individuală",
+    title: "Individual attention",
     description:
-      "Ședințele sunt unul la unul, într-un cadru liniștit și profesional, unde atenția mea este îndreptată exclusiv către tine.",
+      "Sessions are one on one, in a quiet, professional space where my attention is entirely on you.",
   },
   {
     icon: Leaf,
-    title: "Respect pentru corp",
+    title: "Respect for the body",
     description:
-      "Lucrez cu respect pentru ritmul natural al corpului tău, fără forțare.",
+      "I work with respect for your body's natural rhythm, without forcing.",
   },
 ];
 
-export default function DesprePagee() {
+export default function DespreEn() {
   return (
     <>
       <Navbar />
       <main>
         <SubpageHero
-          label="Terapeut Bowen"
-          title="Despre Bogdan Cherecheș"
-          description="Am ajuns la Bowen din nevoie. Acum îl practic în Zalău și Șimleu Silvaniei, cu ședințe blânde și personalizate."
+          label="Bowen Therapist"
+          title="About Bogdan Cherecheș"
+          description="I came to Bowen out of need. Now I practice it in Zalău and Șimleu Silvaniei, with gentle, personalized sessions."
         />
 
-        {/* Profile */}
         <SectionWrapper>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
@@ -63,9 +70,8 @@ export default function DesprePagee() {
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden">
                   <ImagePlaceholder
                     src={IMAGES.bogdan}
-                    alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
+                    alt="Bogdan Cherecheș, Bowen therapist in Zalău and Șimleu Silvaniei"
                     fill
-                    quality={90}
                   />
                 </div>
                 <FloatingElement
@@ -75,11 +81,9 @@ export default function DesprePagee() {
                 >
                   <div className="bg-card rounded-2xl shadow-xl shadow-sage/5 border border-sage/5 p-4 md:p-5">
                     <Leaf className="w-6 h-6 text-sage mb-1" />
-                    <p className="text-sm font-semibold text-navy">
-                      Terapie Bowen
-                    </p>
+                    <p className="text-sm font-semibold text-navy">Bowen Therapy</p>
                     <p className="text-xs text-muted-foreground">
-                      Șimleu Silvaniei & Zalău
+                      Șimleu Silvaniei &amp; Zalău
                     </p>
                   </div>
                 </FloatingElement>
@@ -89,7 +93,7 @@ export default function DesprePagee() {
             <div>
               <BlurFadeIn>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">
-                  Pasiune pentru echilibru
+                  Passion for balance
                 </h2>
               </BlurFadeIn>
 
@@ -111,11 +115,10 @@ export default function DesprePagee() {
           </div>
         </SectionWrapper>
 
-        {/* Values */}
         <SectionWrapper className="bg-ivory-dark/30">
           <ScrollReveal className="text-center mb-14">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-              Valori și abordare
+              Values and approach
             </h2>
           </ScrollReveal>
 
@@ -138,33 +141,22 @@ export default function DesprePagee() {
           </div>
         </SectionWrapper>
 
-        {/* CTA */}
         <SectionWrapper dark className="text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,124,111,0.12),transparent_60%)]" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <BlurFadeIn>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-                Hai să ne cunoaștem
+                Let&rsquo;s meet
               </h2>
               <p className="text-white/60 text-lg mb-8">
-                Scrie-mi și hai să vedem împreună cum te poate ajuta Terapia
-                Bowen.
+                Message me and let&rsquo;s see together how Bowen Therapy can help
+                you.
               </p>
             </BlurFadeIn>
             <ScrollReveal>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <CTAButton
-                  href={waLink()}
-                  label="Scrie pe WhatsApp"
-                  variant="whatsapp"
-                  size="lg"
-                />
-                <CTAButton
-                  href={CONTACT.messenger}
-                  label="Mesaj pe Messenger"
-                  variant="ghost-light"
-                  size="lg"
-                />
+                <CTAButton href={waLink()} label="Message on WhatsApp" variant="whatsapp" size="lg" />
+                <CTAButton href={CONTACT.messenger} label="Message on Messenger" variant="ghost-light" size="lg" />
               </div>
             </ScrollReveal>
           </div>

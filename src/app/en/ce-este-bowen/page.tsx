@@ -20,7 +20,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { CONTACT, SEO, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { enContent } from "@/lib/content-en";
 import {
   Hand,
   Timer,
@@ -39,24 +40,25 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+const base = enContent.SEO.url;
+
 export const metadata: Metadata = {
-  title:
-    "Ce este Terapia Bowen? Ghid complet | Bowen Zalău și Șimleu Silvaniei",
+  title: "What is Bowen Therapy? Complete guide | Bowen Zalău and Șimleu Silvaniei",
   description:
-    "Ghid complet despre Terapia Bowen: ce este, cum funcționează, pentru ce ajută (dureri de spate, recuperare după accidentări, sport, AVC, stres) și unde o poți face în Zalău și Șimleu Silvaniei, județul Sălaj.",
+    "Complete guide to Bowen Therapy: what it is, how it works, what it helps with (back pain, recovery after injuries, sport, stroke, stress) and where to get it in Zalău and Șimleu Silvaniei, Sălaj county.",
   alternates: {
-    canonical: "/ce-este-bowen",
+    canonical: `${base}/en/ce-este-bowen`,
     languages: {
-      ro: "/ce-este-bowen",
-      en: "/en/ce-este-bowen",
-      "x-default": "/ce-este-bowen",
+      ro: `${base}/ce-este-bowen`,
+      en: `${base}/en/ce-este-bowen`,
+      "x-default": `${base}/ce-este-bowen`,
     },
   },
   openGraph: {
-    title: "Ce este Terapia Bowen? Ghid complet | Zalău și Șimleu Silvaniei",
+    title: "What is Bowen Therapy? Complete guide | Zalău and Șimleu Silvaniei",
     description:
-      "Tot ce trebuie să știi despre Tehnica Bowen: principii, beneficii, afecțiuni și recuperare după accidentări, cu Bogdan Cherecheș în Sălaj.",
-    url: `${SEO.url}/ce-este-bowen`,
+      "Everything you need to know about the Bowen Technique: principles, benefits, conditions and recovery after injuries, with Bogdan Cherecheș in Sălaj.",
+    url: `${base}/en/ce-este-bowen`,
     type: "article",
   },
 };
@@ -64,219 +66,214 @@ export const metadata: Metadata = {
 const PRINCIPLES = [
   {
     icon: Hand,
-    title: "Mișcări blânde și precise",
+    title: "Gentle, precise moves",
     description:
-      "Mișcări ușoare, de tip rolling, aplicate cu degetele pe puncte specifice ale corpului: mușchi, fascie, tendoane. Fără presiune puternică, fără durere.",
+      "Light rolling moves applied with the fingers to specific points on the body: muscles, fascia, tendons. No strong pressure, no pain.",
   },
   {
     icon: Timer,
-    title: "Pauzele, secretul tehnicii",
+    title: "The pauses, the secret of the technique",
     description:
-      "Între seturile de mișcări, terapeutul face pauze de 2-5 minute. În liniștea aceea, corpul procesează semnalele și începe să răspundă singur.",
+      "Between sets of moves, the therapist pauses for 2-5 minutes. In that stillness, the body processes the signals and starts to respond on its own.",
   },
   {
     icon: Brain,
-    title: "Reechilibrare neuro-musculară",
+    title: "Neuro-muscular rebalancing",
     description:
-      "Semnale subtile transmise sistemului nervos ghidează corpul din modul de alertă (simpatic) în modul de refacere (parasimpatic).",
+      "Subtle signals sent to the nervous system guide the body from alert mode (sympathetic) into recovery mode (parasympathetic).",
   },
   {
     icon: RefreshCcw,
-    title: "Autoreglare naturală",
+    title: "Natural self-regulation",
     description:
-      "Bowen nu forțează corpul, ci îi amintește cum să funcționeze. Organismul își reactivează propriile mecanisme de echilibrare și vindecare.",
+      "Bowen does not force the body, it reminds it how to work. The body reactivates its own balancing and healing mechanisms.",
   },
 ];
 
 const SESSION_FLOW = [
   {
     step: "1",
-    title: "Evaluare inițială",
-    desc: "Discuție despre starea generală, istoricul tău și ce vrei să rezolvi.",
+    title: "Initial assessment",
+    desc: "A talk about your general state, history and what you want to resolve.",
   },
   {
     step: "2",
-    title: "Mișcări Bowen",
-    desc: "Mișcări ușoare, precise, aplicate pe puncte specifice ale corpului.",
+    title: "Bowen moves",
+    desc: "Light, precise moves applied to specific points on the body.",
   },
   {
     step: "3",
-    title: "Pauze terapeutice",
-    desc: "Momente de liniște în care corpul procesează și își activează autoreglarea.",
+    title: "Therapeutic pauses",
+    desc: "Moments of stillness in which the body processes and activates self-regulation.",
   },
   {
     step: "4",
-    title: "Integrare",
-    desc: "Stare de calm profund. Corpul continuă reechilibrarea și după ședință.",
+    title: "Integration",
+    desc: "A state of deep calm. The body keeps rebalancing after the session too.",
   },
 ];
 
-// Broad, keyword-rich condition coverage so the page captures long-tail searches
-// (back pain, accident/fracture recovery, sports, post-stroke, stress, sleep...).
 const CONDITIONS = [
   {
     icon: Activity,
-    title: "Dureri de spate, gât și umeri",
+    title: "Back, neck and shoulder pain",
     description:
-      "Spate blocat, gât rigid, umeri încordați de la statul pe scaun. Bowen eliberează tensiunea din fascie fără forță și fără pocnituri.",
+      "Locked back, stiff neck, shoulders tense from sitting. Bowen releases the tension in the fascia without force and without cracking.",
   },
   {
     icon: Hand,
-    title: "Dureri articulare și musculare",
+    title: "Joint and muscle pain",
     description:
-      "Genunchi, șolduri, coate sau musculatură suprasolicitată. Mișcările blânde reduc disconfortul și redau mobilitatea.",
+      "Knees, hips, elbows or overworked muscles. The gentle moves reduce discomfort and restore mobility.",
   },
   {
     icon: Shield,
-    title: "Recuperare după accidentări și fracturi",
+    title: "Recovery after injuries and fractures",
     description:
-      "După o entorsă, o fractură consolidată sau o lovitură, Bowen ajută țesuturile să se refacă și grăbește revenirea la normal.",
+      "After a sprain, a healed fracture or a blow, Bowen helps the tissue recover and speeds the return to normal.",
   },
   {
     icon: Dumbbell,
-    title: "Recuperare sportivă",
+    title: "Sports recovery",
     description:
-      "Entorse, întinderi, suprasolicitare. Sportivii revin la antrenamente mai repede, fără medicamente, de obicei după aproximativ douăzeci de ședințe.",
+      "Sprains, strains, overuse. Athletes return to training faster, without medication, usually after about twenty sessions.",
   },
   {
     icon: RefreshCcw,
-    title: "Recuperare după AVC",
+    title: "Recovery after a stroke",
     description:
-      "La persoanele care au trecut printr-un accident vascular cerebral, Bowen sprijină recuperarea treptată a mișcării pe partea afectată.",
+      "In people who have been through a stroke, Bowen supports the gradual recovery of movement on the affected side.",
   },
   {
     icon: Brain,
-    title: "Stres, anxietate și burnout",
+    title: "Stress, anxiety and burnout",
     description:
-      "Când ești tot timpul în priză, sistemul nervos rămâne blocat în alertă. Bowen îl ajută să revină la o stare de calm.",
+      "When you are always switched on, the nervous system stays stuck in alert. Bowen helps it return to a state of calm.",
   },
   {
     icon: Moon,
-    title: "Oboseală cronică și somn",
+    title: "Chronic fatigue and sleep",
     description:
-      "Dormi, dar nu te odihnești? Mulți oameni adorm chiar în timpul ședinței și dorm vizibil mai bine după.",
+      "Do you sleep but never rest? Many people fall asleep during the session and sleep noticeably better afterwards.",
   },
   {
     icon: AlignCenter,
-    title: "Postură și sedentarism",
+    title: "Posture and sedentary life",
     description:
-      "Ore la birou, în mașină sau cu telefonul în mână. Bowen readuce corpul spre un aliniament natural.",
+      "Hours at the desk, in the car or on the phone. Bowen brings the body back toward a natural alignment.",
   },
   {
     icon: Feather,
-    title: "Dureri de cap tensionale",
+    title: "Tension headaches",
     description:
-      "Multe dureri de cap pornesc din tensiunea gâtului și a umerilor. Când zona se eliberează, capul se liniștește.",
+      "Many headaches start from tension in the neck and shoulders. When the area releases, the head calms down.",
   },
   {
     icon: Sparkles,
-    title: "Relaxare profundă și stare de bine",
+    title: "Deep relaxation and wellbeing",
     description:
-      "Nu ai nevoie de o problemă ca să vii. O oră de liniște în care corpul se recalibrează complet.",
+      "You do not need a problem to come. An hour of stillness in which the body fully recalibrates.",
   },
 ];
 
 const BENEFITS = [
   {
     icon: Droplets,
-    title: "Relaxare profundă",
+    title: "Deep relaxation",
     description:
-      "Respirația devine mai amplă, tensiunile se reduc natural, apare o stare de calm care ține mult după ședință.",
+      "Breathing becomes fuller, tension eases naturally, a state of calm appears that lasts well after the session.",
   },
   {
     icon: Leaf,
-    title: "Echilibru și energie",
+    title: "Balance and energy",
     description:
-      "Energia este folosită mai eficient, corpul reactivează procesele de reechilibrare și refacere.",
+      "Energy is used more efficiently, the body reactivates its rebalancing and recovery processes.",
   },
   {
     icon: Shield,
-    title: "Non-invaziv și sigur",
+    title: "Non-invasive and safe",
     description:
-      "Fără manipulări agresive, fără presiuni puternice. Potrivit pentru toate vârstele, inclusiv copii, gravide și vârstnici.",
+      "No aggressive manipulation, no strong pressure. Suitable for all ages, including children, pregnant women and the elderly.",
   },
   {
     icon: Heart,
-    title: "Stare generală de bine",
+    title: "General wellbeing",
     description:
-      "Somn mai bun, mai multă claritate mentală și o stare de bine pe care o simți în tot corpul.",
+      "Better sleep, more mental clarity and a sense of wellbeing you feel throughout the body.",
   },
 ];
 
 const HYDRATION_TIPS = [
-  "Ajută la eliminarea toxinelor",
-  "Susține funcționarea sistemului limfatic",
-  "Îmbunătățește circulația și flexibilitatea țesuturilor",
-  "Contribuie la o recuperare mai rapidă",
+  "Helps eliminate toxins",
+  "Supports the lymphatic system",
+  "Improves circulation and tissue flexibility",
+  "Contributes to faster recovery",
 ];
 
-// Page-specific FAQ (distinct from the /faq page) targeting local + practical
-// long-tail queries. Rendered visibly and mirrored in FAQPage structured data.
 const PAGE_FAQ = [
   {
-    question: "Unde pot face Terapie Bowen în județul Sălaj?",
+    question: "Where can I get Bowen Therapy in Sălaj county?",
     answer:
-      "Ședințele de Terapie Bowen au loc în Zalău și în Șimleu Silvaniei, cu Bogdan Cherecheș, kinetoterapeut și terapeut Bowen certificat BOWTECH. Te programezi simplu printr-un mesaj pe WhatsApp.",
+      "Bowen Therapy sessions take place in Zalău and in Șimleu Silvaniei, with Bogdan Cherecheș, physiotherapist and BOWTECH-certified Bowen therapist. You book simply with a message on WhatsApp.",
   },
   {
-    question: "Terapia Bowen ajută la recuperarea după accidentări?",
+    question: "Does Bowen Therapy help recovery after injuries?",
     answer:
-      "Da. Bowen lucrează cu fascia și cu sistemul nervos, așa că poate completa recuperarea după entorse, fracturi consolidate, accidentări la sport sau suprasolicitare. Mulți sportivi revin la antrenamente după aproximativ douăzeci de ședințe.",
+      "Yes. Bowen works with the fascia and the nervous system, so it can complement recovery after sprains, healed fractures, sports injuries or overuse. Many athletes return to training after about twenty sessions.",
   },
   {
-    question: "În cât timp se văd rezultate?",
+    question: "How soon do results show?",
     answer:
-      "Multe persoane simt o diferență încă din prima ședință. Durerile de spate și de articulații dispar de obicei în 8-10 ședințe, câte una pe săptămână, iar efectele continuă să se simtă și luni după aceea.",
+      "Many people feel a difference from the very first session. Back and joint pain usually goes away in 8-10 sessions, one per week, and the effects keep being felt for months afterwards.",
   },
   {
-    question: "Cât costă o ședință și cât durează?",
+    question: "How much does a session cost and how long is it?",
     answer:
-      "O ședință durează între 50 și 60 de minute. Pentru tarif și disponibilitate, scrie-i lui Bogdan pe WhatsApp și îți răspunde de obicei în aceeași zi.",
+      "A session lasts between 50 and 60 minutes. For pricing and availability, message Bogdan on WhatsApp and he usually replies the same day.",
   },
   {
-    question: "Bowen este potrivit pentru copii și vârstnici?",
+    question: "Is Bowen suitable for children and the elderly?",
     answer:
-      "Da. Fiind foarte blândă, fără presiuni puternice, Terapia Bowen este potrivită pentru toate vârstele, de la bebeluși și copii la gravide și vârstnici.",
+      "Yes. Being very gentle, without strong pressure, Bowen Therapy is suitable for all ages, from babies and children to pregnant women and the elderly.",
   },
   {
-    question: "Cum mă programez la o ședință?",
+    question: "How do I book a session?",
     answer:
-      "Cel mai rapid pe WhatsApp, dar poți scrie și pe Messenger sau suna direct. Spune-i lui Bogdan cum te simți și ce cauți, iar el îți propune un interval în Zalău sau Șimleu Silvaniei.",
+      "Fastest on WhatsApp, but you can also message on Messenger or call directly. Tell Bogdan how you feel and what you are looking for, and he proposes a slot in Zalău or Șimleu Silvaniei.",
   },
 ];
 
 function CeEsteBowenSchemas() {
-  const base = SEO.url;
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Acasă", item: `${base}/` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${base}/en` },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Ce este Terapia Bowen",
-        item: `${base}/ce-este-bowen`,
+        name: "What is Bowen Therapy",
+        item: `${base}/en/ce-este-bowen`,
       },
     ],
   };
   const medicalPage = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    name: "Ce este Terapia Bowen?",
-    url: `${base}/ce-este-bowen`,
-    inLanguage: "ro",
-    lastReviewed: "2026-06-17",
+    name: "What is Bowen Therapy?",
+    url: `${base}/en/ce-este-bowen`,
+    inLanguage: "en",
+    lastReviewed: "2026-06-18",
     about: {
       "@type": "MedicalTherapy",
-      name: "Terapie Bowen",
-      alternateName: "Tehnica Bowen",
+      name: "Bowen Therapy",
+      alternateName: "Bowen Technique",
     },
     audience: { "@type": "Patient" },
     provider: {
       "@type": "Person",
       name: "Bogdan Cherecheș",
-      jobTitle: "Terapeut Bowen",
+      jobTitle: "Bowen Therapist",
     },
   };
   const faq = {
@@ -301,80 +298,74 @@ function CeEsteBowenSchemas() {
   );
 }
 
-export default function CeEsteBowen() {
+export default function CeEsteBowenEn() {
   return (
     <>
       <Navbar />
       <main>
         <CeEsteBowenSchemas />
         <SubpageHero
-          label="Tehnica Bowen"
-          title="Ce este Terapia Bowen?"
-          description="Ghidul complet al unei terapii blânde de reechilibrare neuro-musculară, dezvoltată în Australia de Tom Bowen, și unde o poți face în Zalău și Șimleu Silvaniei."
+          label="Bowen Technique"
+          title="What is Bowen Therapy?"
+          description="The complete guide to a gentle neuro-muscular rebalancing therapy, developed in Australia by Tom Bowen, and where to get it in Zalău and Șimleu Silvaniei."
         />
 
-        {/* Definition */}
         <SectionWrapper>
           <div className="max-w-3xl mx-auto">
             <BlurFadeIn>
               <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-                Pe scurt
+                In short
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">
-                Terapia Bowen, explicată simplu
+                Bowen Therapy, explained simply
               </h2>
             </BlurFadeIn>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <ScrollReveal>
                 <p>
-                  Terapia Bowen (sau Tehnica Bowen) este o terapie complementară
-                  blândă și non-invazivă, care folosește mișcări ușoare și
-                  precise asupra mușchilor, fasciei și țesuturilor moi. A fost
-                  dezvoltată în Australia de Tom Bowen și este recunoscută
-                  astăzi în întreaga lume prin Bowen Therapy Academy of
-                  Australia (BOWTECH®).
+                  Bowen Therapy (or the Bowen Technique) is a gentle,
+                  non-invasive complementary therapy that uses light, precise
+                  moves on the muscles, fascia and soft tissue. It was developed
+                  in Australia by Tom Bowen and is recognized today worldwide
+                  through the Bowen Therapy Academy of Australia (BOWTECH®).
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Nu este masaj și nu este fizioterapie. Diferența esențială
-                  stă în pauzele dintre mișcări: în acele momente de liniște,
-                  sistemul nervos primește timp să proceseze semnalele și să
-                  comute corpul din modul de alertă în modul de refacere. Pe
-                  scurt, Bowen nu forțează corpul, ci îi reamintește cum să se
-                  reechilibreze singur.
+                  It is not massage and it is not physiotherapy. The key
+                  difference is in the pauses between moves: in those moments of
+                  stillness, the nervous system gets time to process the signals
+                  and switch the body from alert mode into recovery mode. In
+                  short, Bowen does not force the body, it reminds it how to
+                  rebalance on its own.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-navy font-medium border-l-2 border-sage pl-4">
-                  În Zalău și Șimleu Silvaniei, ședințele de Terapie Bowen sunt
-                  susținute de Bogdan Cherecheș, kinetoterapeut cu diplomă de
-                  proficiență BOWTECH®.
+                  In Zalău and Șimleu Silvaniei, Bowen Therapy sessions are
+                  provided by Bogdan Cherecheș, a physiotherapist with a
+                  BOWTECH® diploma of proficiency.
                 </p>
               </ScrollReveal>
             </div>
           </div>
         </SectionWrapper>
 
-        {/* How it works */}
         <SectionWrapper className="bg-ivory-dark/30">
           <ScrollReveal className="text-center mb-14">
             <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-              Principii
+              Principles
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-              Cum funcționează?
+              How does it work?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tehnica Bowen se bazează pe mișcări delicate și pauze bine alese
-              care transmit semnale sistemului nervos și fasciei.
+              The Bowen Technique is based on delicate moves and well-chosen
+              pauses that send signals to the nervous system and the fascia.
             </p>
           </ScrollReveal>
 
-          <StaggerContainer
-            className="grid md:grid-cols-2 gap-6"
-            staggerDelay={0.1}
-          >
+          <StaggerContainer className="grid md:grid-cols-2 gap-6" staggerDelay={0.1}>
             {PRINCIPLES.map((item) => (
               <StaggerItem key={item.title}>
                 <GlassCard className="h-full flex gap-5 items-start">
@@ -396,50 +387,47 @@ export default function CeEsteBowen() {
 
           <ScrollReveal className="mt-10 max-w-3xl mx-auto">
             <p className="text-muted-foreground text-lg leading-relaxed text-center">
-              Fascia este țesutul care învelește fiecare mușchi, os și organ,
-              ca o pânză continuă în tot corpul. Când se tensionează din cauza
-              stresului, a unei accidentări sau a posturii greșite, durerea
-              poate apărea departe de locul problemei. Mișcările Bowen
-              acționează exact asupra acestei rețele, iar pauzele lasă corpul să
-              integreze schimbarea.
+              The fascia is the tissue that wraps every muscle, bone and organ,
+              like one continuous web through the whole body. When it tightens
+              because of stress, an injury or bad posture, pain can appear far
+              from the source. Bowen moves act exactly on this network, and the
+              pauses let the body integrate the change.
             </p>
           </ScrollReveal>
         </SectionWrapper>
 
-        {/* Session flow */}
         <SectionWrapper>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <BlurFadeIn>
                 <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-                  La ședință
+                  At the session
                 </span>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">
-                  Cum decurge o ședință?
+                  How does a session go?
                 </h2>
               </BlurFadeIn>
 
               <div className="space-y-5">
                 <ScrollReveal>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    O ședință tipică de Terapie Bowen durează între 50 și 60 de
-                    minute. Te vei afla pe o masă de terapie, îmbrăcat în haine
-                    lejere și confortabile.
+                    A typical Bowen Therapy session lasts between 50 and 60
+                    minutes. You will be on a therapy table, dressed in loose,
+                    comfortable clothes.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.1}>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Bogdan aplică mișcări blânde pe puncte specifice, urmate de
-                    pauze în care corpul procesează informația primită. Multe
-                    persoane adorm în timpul ședinței, semn al relaxării
-                    profunde.
+                    Bogdan applies gentle moves on specific points, followed by
+                    pauses in which the body processes the information. Many
+                    people fall asleep during the session, a sign of deep
+                    relaxation.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
                   <p className="text-navy font-medium text-lg leading-relaxed pl-4 border-l-2 border-sage">
-                    Se recomandă peste 10 ședințe, câte una pe săptămână.
-                    Corpul continuă să răspundă terapiei mult timp după fiecare
-                    ședință.
+                    More than 10 sessions are recommended, one per week. The body
+                    keeps responding to the therapy long after each session.
                   </p>
                 </ScrollReveal>
               </div>
@@ -459,9 +447,7 @@ export default function CeEsteBowen() {
                       <h3 className="font-semibold text-navy mb-0.5">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {item.desc}
-                      </p>
+                      <p className="text-muted-foreground text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -470,59 +456,42 @@ export default function CeEsteBowen() {
           </div>
         </SectionWrapper>
 
-        {/* Mid-page CTA */}
         <SectionWrapper dark className="text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,124,111,0.12),transparent_60%)]" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <BlurFadeIn>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-                Ai o durere care nu trece?
+                Do you have pain that won&rsquo;t go away?
               </h2>
               <p className="text-white/60 text-lg mb-8">
-                Programează o ședință de Terapie Bowen în Zalău sau Șimleu
-                Silvaniei. Îți răspunde Bogdan personal, de obicei în aceeași
-                zi.
+                Book a Bowen Therapy session in Zalău or Șimleu Silvaniei. Bogdan
+                replies personally, usually the same day.
               </p>
             </BlurFadeIn>
             <ScrollReveal>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <CTAButton
-                  href={waLink()}
-                  label="Programează pe WhatsApp"
-                  variant="whatsapp"
-                  size="lg"
-                />
-                <CTAButton
-                  href={CONTACT.messenger}
-                  label="Mesaj pe Messenger"
-                  variant="ghost-light"
-                  size="lg"
-                />
+                <CTAButton href={waLink()} label="Book on WhatsApp" variant="whatsapp" size="lg" />
+                <CTAButton href={CONTACT.messenger} label="Message on Messenger" variant="ghost-light" size="lg" />
               </div>
             </ScrollReveal>
           </div>
         </SectionWrapper>
 
-        {/* Conditions */}
         <SectionWrapper className="bg-ivory-dark/30">
           <ScrollReveal className="text-center mb-14">
             <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-              Pentru ce ajută
+              What it helps
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-              Cu ce te poate ajuta Terapia Bowen
+              What Bowen Therapy can help with
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              De la dureri și accidentări, până la stres și oboseală. Iată cele
-              mai frecvente motive pentru care oamenii din Sălaj aleg Terapia
-              Bowen.
+              From pain and injuries to stress and fatigue. Here are the most
+              common reasons people in Sălaj choose Bowen Therapy.
             </p>
           </ScrollReveal>
 
-          <StaggerContainer
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            staggerDelay={0.06}
-          >
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
             {CONDITIONS.map((item) => (
               <StaggerItem key={item.title}>
                 <GlassCard className="h-full">
@@ -542,61 +511,59 @@ export default function CeEsteBowen() {
 
           <ScrollReveal className="mt-10 max-w-3xl mx-auto">
             <p className="text-muted-foreground text-lg leading-relaxed text-center">
-              Pentru că este atât de blândă, Terapia Bowen este potrivită
-              pentru toate vârstele: de la bebeluși și copii, la gravide,
-              persoane sensibile și vârstnici. Nu presupune presiuni puternice,
-              deci poate fi folosită și acolo unde alte abordări sunt prea
-              intense.
+              Because it is so gentle, Bowen Therapy is suitable for all ages:
+              from babies and children to pregnant women, sensitive people and
+              the elderly. It does not involve strong pressure, so it can be used
+              even where other approaches are too intense.
             </p>
           </ScrollReveal>
 
           <ScrollReveal className="mt-8">
             <div className="bg-earth/5 border border-earth/20 rounded-2xl p-5 text-center max-w-3xl mx-auto">
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Terapia Bowen este o terapie complementară. Nu înlocuiește
-                consultul medical sau tratamentele recomandate de specialiști,
-                ci le poate sprijini.
+                Bowen Therapy is a complementary therapy. It does not replace
+                medical consultation or treatments recommended by specialists; it
+                can support them.
               </p>
             </div>
           </ScrollReveal>
         </SectionWrapper>
 
-        {/* Recovery focus */}
         <SectionWrapper>
           <div className="max-w-3xl mx-auto">
             <BlurFadeIn>
               <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-                Recuperare
+                Recovery
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">
-                Recuperare după accidentări și sport în Sălaj
+                Recovery after injuries and sport in Sălaj
               </h2>
             </BlurFadeIn>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <ScrollReveal>
                 <p>
-                  Multe dintre persoanele care vin la Bogdan caută recuperare:
-                  după o accidentare la sport, o entorsă, o fractură
-                  consolidată sau o suprasolicitare. Pentru că lucrează direct
-                  cu fascia și cu sistemul nervos, Bowen poate completa foarte
-                  bine recuperarea clasică și o poate grăbi.
+                  Many of the people who come to Bogdan are looking for recovery:
+                  after a sports injury, a sprain, a healed fracture or overuse.
+                  Because it works directly with the fascia and the nervous
+                  system, Bowen can complement classic recovery very well and
+                  speed it up.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Bogdan este kinetoterapeut, absolvent al Facultății de Sport,
-                  specializarea Kinetoterapie (2012), și a lucrat ani la rând în
-                  recuperare și fitness înainte să se dedice exclusiv terapiei
-                  Bowen. Această experiență îl ajută să înțeleagă exact ce are
-                  nevoie un corp accidentat și cum să îl sprijine fără să îl
-                  forțeze.
+                  Bogdan is a physiotherapist, a graduate of the Faculty of
+                  Sport, specialization in Physical Therapy (2012), and worked for
+                  years in recovery and fitness before dedicating himself
+                  exclusively to Bowen. This experience helps him understand
+                  exactly what an injured body needs and how to support it without
+                  forcing it.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <blockquote className="bg-white rounded-2xl p-6 border border-border/50 text-navy italic leading-relaxed">
-                  &ldquo;După un accident la schi, nimic nu mă ajuta. Un prieten
-                  m-a trimis la Bogdan. Trei ședințe mai târziu, mă mișcam din
-                  nou fără durere.&rdquo;
+                  &ldquo;After a skiing accident, nothing helped me. A friend sent
+                  me to Bogdan. Three sessions later, I was moving again without
+                  pain.&rdquo;
                   <span className="block mt-3 not-italic text-sm text-muted-foreground">
                     Cristian L., Zalău
                   </span>
@@ -606,21 +573,17 @@ export default function CeEsteBowen() {
           </div>
         </SectionWrapper>
 
-        {/* Benefits */}
         <SectionWrapper className="bg-ivory-dark/30">
           <ScrollReveal className="text-center mb-14">
             <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-              Beneficii
+              Benefits
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-              Ce raportează oamenii după ședințe
+              What people report after sessions
             </h2>
           </ScrollReveal>
 
-          <StaggerContainer
-            className="grid sm:grid-cols-2 gap-6"
-            staggerDelay={0.1}
-          >
+          <StaggerContainer className="grid sm:grid-cols-2 gap-6" staggerDelay={0.1}>
             {BENEFITS.map((item) => (
               <StaggerItem key={item.title}>
                 <GlassCard className="h-full">
@@ -639,19 +602,18 @@ export default function CeEsteBowen() {
           </StaggerContainer>
         </SectionWrapper>
 
-        {/* Hydration */}
         <SectionWrapper>
           <div className="max-w-3xl mx-auto text-center">
             <BlurFadeIn>
               <Droplets className="w-10 h-10 text-sage mx-auto mb-4" />
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-4">
-                Importanța hidratării
+                The importance of hydration
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Hidratarea joacă un rol esențial în eficiența terapiei Bowen.
-                După o ședință, organismul începe un proces profund de reglare
-                și regenerare, iar apa susține acest proces natural. Bea apă
-                înainte și după ședință.
+                Hydration plays an essential role in how effective Bowen Therapy
+                is. After a session, the body begins a deep process of regulation
+                and regeneration, and water supports this natural process. Drink
+                water before and after the session.
               </p>
             </BlurFadeIn>
             <ScrollReveal>
@@ -670,42 +632,41 @@ export default function CeEsteBowen() {
           </div>
         </SectionWrapper>
 
-        {/* Local SEO block */}
         <SectionWrapper className="bg-ivory-dark/30">
           <div className="max-w-3xl mx-auto">
             <BlurFadeIn>
               <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-                Locații
+                Locations
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">
-                Terapie Bowen în Zalău și Șimleu Silvaniei
+                Bowen Therapy in Zalău and Șimleu Silvaniei
               </h2>
             </BlurFadeIn>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <ScrollReveal>
                 <p>
-                  Ședințele au loc în două locații din județul Sălaj: Zalău și
-                  Șimleu Silvaniei. Indiferent de care ești mai aproape, te poți
-                  programa simplu, printr-un mesaj pe WhatsApp.
+                  Sessions take place in two locations in Sălaj county: Zalău and
+                  Șimleu Silvaniei. Whichever is closer to you, you can book
+                  simply, with a message on WhatsApp.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Adresa exactă din Zalău o primești când stabilești
-                  programarea. În Șimleu Silvaniei, cabinetul se află pe Strada
-                  Horea 60. Vezi toate detaliile pe pagina de{" "}
+                  The exact address in Zalău you receive when you set the
+                  appointment. In Șimleu Silvaniei, the practice is on Strada
+                  Horea 60. See all the details on the{" "}
                   <Link
-                    href="/contact"
+                    href="/en/contact"
                     className="text-sage font-medium underline decoration-dotted underline-offset-2 hover:decoration-solid"
                   >
-                    contact și locații
+                    contact and locations
                   </Link>{" "}
-                  sau află mai multe{" "}
+                  page or find out more{" "}
                   <Link
-                    href="/despre"
+                    href="/en/despre"
                     className="text-sage font-medium underline decoration-dotted underline-offset-2 hover:decoration-solid"
                   >
-                    despre Bogdan
+                    about Bogdan
                   </Link>
                   .
                 </p>
@@ -714,14 +675,13 @@ export default function CeEsteBowen() {
           </div>
         </SectionWrapper>
 
-        {/* Page FAQ */}
         <SectionWrapper>
           <ScrollReveal className="text-center mb-12">
             <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-              Întrebări frecvente
+              Frequently asked questions
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy">
-              Ce întreabă cel mai des oamenii
+              What people ask most
             </h2>
           </ScrollReveal>
           <div className="max-w-3xl mx-auto">
@@ -744,43 +704,32 @@ export default function CeEsteBowen() {
             </Accordion>
             <ScrollReveal className="mt-6 text-center">
               <Link
-                href="/faq"
+                href="/en/faq"
                 className="inline-flex items-center gap-1.5 text-sage font-medium hover:gap-2.5 transition-all"
               >
-                Vezi toate întrebările frecvente
+                See all frequently asked questions
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </ScrollReveal>
           </div>
         </SectionWrapper>
 
-        {/* Final CTA */}
         <SectionWrapper dark className="text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,124,111,0.12),transparent_60%)]" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <BlurFadeIn>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-                Fă primul pas
+                Take the first step
               </h2>
               <p className="text-white/60 text-lg mb-8">
-                Un mesaj e tot ce trebuie. Programează o ședință de Terapie
-                Bowen cu Bogdan Cherecheș, în Zalău sau Șimleu Silvaniei.
+                One message is all it takes. Book a Bowen Therapy session with
+                Bogdan Cherecheș, in Zalău or Șimleu Silvaniei.
               </p>
             </BlurFadeIn>
             <ScrollReveal>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <CTAButton
-                  href={waLink()}
-                  label="Programează pe WhatsApp"
-                  variant="whatsapp"
-                  size="lg"
-                />
-                <CTAButton
-                  href={CONTACT.messenger}
-                  label="Mesaj pe Messenger"
-                  variant="ghost-light"
-                  size="lg"
-                />
+                <CTAButton href={waLink()} label="Book on WhatsApp" variant="whatsapp" size="lg" />
+                <CTAButton href={CONTACT.messenger} label="Message on Messenger" variant="ghost-light" size="lg" />
               </div>
             </ScrollReveal>
           </div>

@@ -8,7 +8,8 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { CTAButton } from "@/components/CTAButton";
 
-import { FAQ_ITEMS, CONTACT, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { enContent } from "@/lib/content-en";
 import {
   Accordion,
   AccordionContent,
@@ -16,13 +17,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const base = enContent.SEO.url;
+const FAQ_ITEMS = enContent.FAQ_ITEMS;
+
 export const metadata: Metadata = {
-  title: "Întrebări frecvente | Bogdan Cherecheș - Terapie Bowen",
+  title: "FAQ | Bogdan Cherecheș - Bowen Therapy",
   description:
-    "Răspunsuri la întrebări despre Terapia Bowen în Zalău și Șimleu Silvaniei: cum funcționează, cât durează o ședință, pentru cine este potrivită și câte ședințe sunt recomandate.",
+    "Answers to the most common questions about Bowen Therapy in Zalău and Șimleu Silvaniei: how it works, how long a session lasts, who it is for.",
   alternates: {
-    canonical: "/faq",
-    languages: { ro: "/faq", en: "/en/faq", "x-default": "/faq" },
+    canonical: `${base}/en/faq`,
+    languages: {
+      ro: `${base}/faq`,
+      en: `${base}/en/faq`,
+      "x-default": `${base}/faq`,
+    },
   },
 };
 
@@ -33,13 +41,9 @@ function FAQSchema() {
     mainEntity: FAQ_ITEMS.map((item) => ({
       "@type": "Question",
       name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
   };
-
   return (
     <script
       type="application/ld+json"
@@ -50,7 +54,7 @@ function FAQSchema() {
   );
 }
 
-export default function FAQPage() {
+export default function FAQPageEn() {
   return (
     <>
       <Navbar />
@@ -58,8 +62,8 @@ export default function FAQPage() {
         <FAQSchema />
         <SubpageHero
           label="FAQ"
-          title="Întrebări frecvente"
-          description="Răspunsuri la cele mai comune întrebări despre Terapia Bowen și ce poți aștepta de la o ședință."
+          title="Frequently asked questions"
+          description="Answers to the most common questions about Bowen Therapy and what to expect from a session."
         />
 
         <SectionWrapper>
@@ -84,29 +88,28 @@ export default function FAQPage() {
           </div>
         </SectionWrapper>
 
-        {/* Still have questions? */}
         <SectionWrapper dark className="text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,124,111,0.12),transparent_60%)]" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <BlurFadeIn>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-                Mai ai întrebări?
+                Still have questions?
               </h2>
               <p className="text-white/60 text-lg mb-8">
-                Scrie-i lui Bogdan și îți va răspunde cu plăcere.
+                Message Bogdan and he will gladly answer.
               </p>
             </BlurFadeIn>
             <ScrollReveal>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <CTAButton
                   href={waLink()}
-                  label="Întreabă pe WhatsApp"
+                  label="Ask on WhatsApp"
                   variant="whatsapp"
                   size="lg"
                 />
                 <CTAButton
                   href={CONTACT.messenger}
-                  label="Mesaj pe Messenger"
+                  label="Message on Messenger"
                   variant="ghost-light"
                   size="lg"
                 />

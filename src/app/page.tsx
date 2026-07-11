@@ -17,6 +17,19 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { Footer } from "@/components/Footer";
 import { TrustBadgesBand } from "@/components/TrustBadgesBand";
 import { OrganicDivider } from "@/components/OrganicDivider";
+import type { Metadata } from "next";
+import { SEO } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: SEO.url,
+    languages: {
+      ro: SEO.url,
+      en: `${SEO.url}/en`,
+      "x-default": SEO.url,
+    },
+  },
+};
 
 export default function Home() {
   return (

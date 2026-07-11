@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   title: "Politica de confidențialitate | Bogdan Cherecheș - Terapie Bowen",
   description:
     "Politica de confidențialitate pentru site-ul Bogdan Cherecheș - Terapie Bowen.",
-  alternates: { canonical: "/confidentialitate" },
+  alternates: {
+    canonical: "/confidentialitate",
+    languages: {
+      ro: "/confidentialitate",
+      en: "/en/confidentialitate",
+      "x-default": "/confidentialitate",
+    },
+  },
 };
 
 export default function ConfidentialitatePage() {

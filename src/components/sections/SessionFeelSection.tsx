@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { SESSION_FEEL } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import {
   Feather,
   Moon,
@@ -22,6 +22,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function SessionFeelSection() {
+  const { SESSION_FEEL } = useContent();
+  const en = useLocale() === "en";
   const featured = SESSION_FEEL.cards[0];
   const rest = SESSION_FEEL.cards.slice(1);
   const FeaturedIcon = iconMap[featured.icon];
@@ -32,7 +34,7 @@ export function SessionFeelSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
             <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-              Experiența
+              {en ? "The experience" : "Experiența"}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy leading-[1.1]">
               {SESSION_FEEL.title}
@@ -51,7 +53,11 @@ export function SessionFeelSection() {
           <div className="group relative rounded-3xl overflow-hidden h-full min-h-[340px] lg:min-h-[440px]">
             <Image
               src="/images/feel-v4.jpg"
-              alt="Mișcări blânde de terapie Bowen pe spate, într-o ședință relaxantă"
+              alt={
+                en
+                  ? "Gentle Bowen therapy moves on the back, during a relaxing session"
+                  : "Mișcări blânde de terapie Bowen pe spate, într-o ședință relaxantă"
+              }
               fill
               className="img-forest object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 33vw"

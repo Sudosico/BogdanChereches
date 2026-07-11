@@ -1,4 +1,6 @@
-import { REASSURANCE } from "@/lib/constants";
+"use client";
+
+import { useContent } from "@/components/ContentProvider";
 import { cn } from "@/lib/utils";
 
 interface ReassuranceStripProps {
@@ -12,6 +14,7 @@ export function ReassuranceStrip({
   tone = "light",
   align = "start",
 }: ReassuranceStripProps) {
+  const { REASSURANCE } = useContent();
   return (
     <ul
       className={cn(

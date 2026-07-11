@@ -2,7 +2,7 @@
 
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { WHO_CHOOSES } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import {
   Brain,
   Battery,
@@ -25,12 +25,14 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function WhoChoosesBowenSection() {
+  const { WHO_CHOOSES } = useContent();
+  const en = useLocale() === "en";
   return (
     <SectionWrapper>
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-10">
         <ScrollReveal className="lg:col-span-5">
           <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-            Pentru tine
+            {en ? "For you" : "Pentru tine"}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy leading-[1.1] mb-4">
             {WHO_CHOOSES.title}

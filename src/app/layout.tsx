@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { inter, display } from "@/lib/fonts";
+import { headers } from "next/headers";
 import { LenisProvider } from "@/providers/LenisProvider";
 import { ConversionTracker } from "@/components/ConversionTracker";
 import { MarketingScripts } from "@/components/MarketingScripts";
+import { ContentProvider } from "@/components/ContentProvider";
+import { getContent, type Locale } from "@/lib/content";
 import { SEO, CONTACT } from "@/lib/constants";
 import "./globals.css";
 
@@ -161,14 +164,16 @@ function LocalBusinessSchema() {
   );
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = (((await headers()).get("x-locale") as Locale) || "ro");
+  const content = getContent(locale);
   return (
     <html
-      lang="ro"
+      lang={locale}
       className={`${inter.variable} ${display.variable} h-full antialiased`}
     >
       <head>
@@ -176,7 +181,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-ivory text-navy">
         <ConversionTracker />
-        <LenisProvider>{children}</LenisProvider>
+        <ContentProvider locale={locale} content={content}>
+          <LenisProvider>{children}</LenisProvider>
+        </ContentProvider>
         <Analytics />
         <SpeedInsights />
         <MarketingScripts />

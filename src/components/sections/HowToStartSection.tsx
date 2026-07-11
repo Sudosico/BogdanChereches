@@ -4,7 +4,8 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTAButton } from "@/components/CTAButton";
 
-import { HOW_TO_START, CONTACT, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { MessageCircle, Calendar, Smile } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -14,11 +15,13 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 export function HowToStartSection() {
+  const { HOW_TO_START } = useContent();
+  const en = useLocale() === "en";
   return (
     <SectionWrapper className="bg-cream/50 overflow-hidden">
       <ScrollReveal className="text-center mb-16">
         <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-          Începe acum
+          {en ? "Get started" : "Începe acum"}
         </span>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy mb-4 leading-[1.1]">
           {HOW_TO_START.title}
@@ -82,13 +85,13 @@ export function HowToStartSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-14">
             <CTAButton
               href={waLink()}
-              label="Scrie pe WhatsApp"
+              label={en ? "Message on WhatsApp" : "Scrie pe WhatsApp"}
               variant="whatsapp"
               size="lg"
             />
             <CTAButton
               href={CONTACT.messenger}
-              label="Scrie pe Messenger"
+              label={en ? "Message on Messenger" : "Scrie pe Messenger"}
               variant="messenger"
               size="lg"
             />

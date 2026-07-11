@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { CONTACT, waLink } from "@/lib/constants";
+import { useLocale } from "@/components/ContentProvider";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -23,6 +24,7 @@ function MessengerIcon({ className }: { className?: string }) {
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
+  const en = useLocale() === "en";
 
   useEffect(() => {
     function onScroll() {
@@ -48,7 +50,7 @@ export function FloatingCTA() {
             rel="noopener noreferrer"
             data-cta-location="floating"
             className="w-14 h-14 rounded-full bg-[#1FAA53] text-white flex items-center justify-center shadow-lg shadow-[#1FAA53]/30 hover:scale-110 transition-transform duration-300"
-            aria-label="Scrie pe WhatsApp"
+            aria-label={en ? "Message on WhatsApp" : "Scrie pe WhatsApp"}
           >
             <WhatsAppIcon className="w-7 h-7" />
           </a>

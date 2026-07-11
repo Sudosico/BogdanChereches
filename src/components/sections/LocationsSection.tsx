@@ -6,15 +6,18 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { CTAButton } from "@/components/CTAButton";
 
-import { LOCATIONS, CONTACT, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { MapPin, Navigation, ExternalLink } from "lucide-react";
 
 export function LocationsSection() {
+  const { LOCATIONS } = useContent();
+  const en = useLocale() === "en";
   return (
     <SectionWrapper id="locatii">
       <ScrollReveal className="text-center mb-14">
         <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-          Locații
+          {en ? "Locations" : "Locații"}
         </span>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
           {LOCATIONS.title}
@@ -33,14 +36,14 @@ export function LocationsSection() {
                     className="absolute inset-0 w-full h-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`Hartă ${loc.city}`}
+                    title={`${en ? "Map" : "Hartă"} ${loc.city}`}
                     allowFullScreen
                   />
                 ) : (
                   <>
                     <ImagePlaceholder
                       src={loc.image}
-                      alt={`Locație ${loc.city}`}
+                      alt={`${en ? "Location" : "Locație"} ${loc.city}`}
                       fill
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
@@ -81,7 +84,7 @@ export function LocationsSection() {
                 )}
                 <CTAButton
                   href={waLink()}
-                  label="Programare"
+                  label={en ? "Book" : "Programare"}
                   variant="primary"
                   size="md"
                   className="w-full"

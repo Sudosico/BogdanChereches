@@ -9,7 +9,8 @@ import { BreathingPulse } from "@/components/animations/BreathingPulse";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Image from "next/image";
 
-import { ABOUT, IMAGES, CONTACT, waLink } from "@/lib/constants";
+import { IMAGES, CONTACT, waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { Award, BadgeCheck } from "lucide-react";
 
 function SocialIcon({
@@ -36,6 +37,8 @@ function SocialIcon({
 
 export function AboutBogdanSection() {
   const [diplomaOpen, setDiplomaOpen] = useState(false);
+  const { ABOUT } = useContent();
+  const en = useLocale() === "en";
 
   return (
     <SectionWrapper id="despre" className="bg-cream/40">
@@ -46,7 +49,11 @@ export function AboutBogdanSection() {
             <div className="aspect-[3/4] rounded-3xl overflow-hidden relative">
               <ImagePlaceholder
                 src={IMAGES.bogdan}
-                alt="Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
+                alt={
+                  en
+                    ? "Bogdan Cherecheș, Bowen therapist in Zalău and Șimleu Silvaniei"
+                    : "Bogdan Cherecheș, terapeut Bowen în Zalău și Șimleu Silvaniei"
+                }
                 fill
                 quality={90}
               />
@@ -62,10 +69,12 @@ export function AboutBogdanSection() {
               <div className="bg-white rounded-2xl shadow-xl shadow-sage/5 p-5 border border-sage/5">
                 <BadgeCheck className="w-6 h-6 text-sage mb-1" />
                 <p className="text-sm font-semibold text-navy">
-                  Certificat BOWTECH®
+                  {en ? "BOWTECH® Certified" : "Certificat BOWTECH®"}
                 </p>
                 <p className="text-[11px] text-muted-foreground">
-                  Diplomă de Proficiență, 2024
+                  {en
+                    ? "Diploma of Proficiency, 2024"
+                    : "Diplomă de Proficiență, 2024"}
                 </p>
               </div>
             </BreathingPulse>
@@ -79,7 +88,7 @@ export function AboutBogdanSection() {
         <div className="lg:col-span-7">
           <BlurFadeIn>
             <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-              Terapeut
+              {en ? "Therapist" : "Terapeut"}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy mb-8 leading-[1.1]">
               {ABOUT.title}
@@ -125,7 +134,11 @@ export function AboutBogdanSection() {
               <div className="relative w-full aspect-[3/4]">
                 <Image
                   src="/images/diploma-bowtech.webp"
-                  alt="Diplomă de Proficiență BOWTECH® - Bogdan Cherecheș, decembrie 2024"
+                  alt={
+                    en
+                      ? "BOWTECH® Diploma of Proficiency - Bogdan Cherecheș, December 2024"
+                      : "Diplomă de Proficiență BOWTECH® - Bogdan Cherecheș, decembrie 2024"
+                  }
                   fill
                   priority
                   sizes="(max-width: 640px) 90vw, 384px"

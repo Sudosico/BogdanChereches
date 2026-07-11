@@ -355,8 +355,6 @@ export const FUNNEL = {
     { label: "Recuperare sportivă", emoji: "🏃", message: "recuperare sportivă" },
     { label: "Altceva", emoji: "✨", message: "o consultație" },
   ],
-  whatsappTemplate: (reason: string) =>
-    `Salut, aș dori o programare Bowen pentru ${reason}. Mulțumesc!`,
 } as const;
 
 export const FOOTER = {

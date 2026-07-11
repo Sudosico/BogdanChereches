@@ -1,13 +1,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { HERO } from "@/lib/constants";
+import { useContent } from "@/components/ContentProvider";
 import { Feather, Users, Sparkles, Ban } from "lucide-react";
 
 const ICONS = [Feather, Users, Sparkles, Ban];
 
 export function TrustBadgesBand() {
   const reduce = useReducedMotion();
+  const { HERO } = useContent();
 
   return (
     <section className="relative bg-bone py-8 md:py-10">

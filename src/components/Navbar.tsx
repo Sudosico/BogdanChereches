@@ -5,30 +5,35 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { CONTACT, HERO, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
+import { localizeHref } from "@/lib/href";
 import { cn } from "@/lib/utils";
 
 const SUBPAGE_NAV = [
-  { label: "Ce este Bowen", href: "/ce-este-bowen" },
-  { label: "Despre", href: "/despre" },
-  { label: "Contact", href: "/contact" },
-  { label: "Întrebări", href: "/faq" },
+  { ro: "Ce este Bowen", en: "What is Bowen", href: "/ce-este-bowen" },
+  { ro: "Despre", en: "About", href: "/despre" },
+  { ro: "Contact", en: "Contact", href: "/contact" },
+  { ro: "Întrebări", en: "FAQ", href: "/faq" },
 ];
 
 const HOME_NAV = [
-  { label: "Ce este Bowen", href: "#ce-este-bowen" },
-  { label: "Ședința", href: "#sedinta" },
-  { label: "Despre", href: "#despre" },
-  { label: "Locații", href: "#locatii" },
-  { label: "Întrebări", href: "#faq" },
+  { ro: "Ce este Bowen", en: "What is Bowen", href: "#ce-este-bowen" },
+  { ro: "Ședința", en: "The session", href: "#sedinta" },
+  { ro: "Despre", en: "About", href: "#despre" },
+  { ro: "Locații", en: "Locations", href: "#locatii" },
+  { ro: "Întrebări", en: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/en";
   const [scrolled, setScrolled] = useState(!isHome);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const locale = useLocale();
+  const en = locale === "en";
+  const { HERO } = useContent();
   const navLinks = isHome ? HOME_NAV : SUBPAGE_NAV;
 
   useEffect(() => {
@@ -59,7 +64,7 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
-            href="/"
+            href={localizeHref("/", locale)}
             className={cn(
               "font-heading text-lg md:text-xl font-semibold transition-colors",
               scrolled ? "text-navy" : "text-white"
@@ -73,25 +78,25 @@ export function Navbar() {
               link.href.startsWith("#") ? (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={localizeHref(link.href, locale)}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-sage",
                     scrolled ? "text-navy/70" : "text-white/80"
                   )}
                 >
-                  {link.label}
+                  {en ? link.en : link.ro}
                 </a>
               ) : (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={localizeHref(link.href, locale)}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-sage",
                     scrolled ? "text-navy/70" : "text-white/80",
                     pathname === link.href && "text-sage"
                   )}
                 >
-                  {link.label}
+                  {en ? link.en : link.ro}
                 </Link>
               )
             )}
@@ -112,7 +117,15 @@ export function Navbar() {
               "lg:hidden p-2 rounded-lg transition-colors",
               scrolled ? "text-navy" : "text-white"
             )}
-            aria-label={mobileOpen ? "Închide meniul" : "Deschide meniul"}
+            aria-label={
+              en
+                ? mobileOpen
+                  ? "Close menu"
+                  : "Open menu"
+                : mobileOpen
+                  ? "Închide meniul"
+                  : "Deschide meniul"
+            }
           >
             {mobileOpen ? (
               <X className="w-6 h-6" />
@@ -137,23 +150,23 @@ export function Navbar() {
                 link.href.startsWith("#") ? (
                   <a
                     key={link.href}
-                    href={link.href}
+                    href={localizeHref(link.href, locale)}
                     onClick={() => setMobileOpen(false)}
                     className="block text-navy/70 hover:text-sage text-base font-medium py-2 transition-colors"
                   >
-                    {link.label}
+                    {en ? link.en : link.ro}
                   </a>
                 ) : (
                   <Link
                     key={link.href}
-                    href={link.href}
+                    href={localizeHref(link.href, locale)}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "block text-navy/70 hover:text-sage text-base font-medium py-2 transition-colors",
                       pathname === link.href && "text-sage"
                     )}
                   >
-                    {link.label}
+                    {en ? link.en : link.ro}
                   </Link>
                 )
               )}

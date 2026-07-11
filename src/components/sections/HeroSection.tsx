@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { CONTACT, IMAGES } from "@/lib/constants";
+import { useLocale } from "@/components/ContentProvider";
 import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { CTAButton } from "@/components/CTAButton";
 import { FunnelModal } from "@/components/FunnelModal";
@@ -11,6 +12,7 @@ import { Star } from "lucide-react";
 
 export function HeroSection() {
   const [funnelOpen, setFunnelOpen] = useState(false);
+  const en = useLocale() === "en";
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-forest-deep">
@@ -18,7 +20,11 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src={IMAGES.hero}
-          alt="Cameră de tratament pentru terapie Bowen, calmă și primitoare"
+          alt={
+            en
+              ? "Calm, welcoming Bowen therapy treatment room"
+              : "Cameră de tratament pentru terapie Bowen, calmă și primitoare"
+          }
           fill
           priority
           sizes="100vw"
@@ -38,7 +44,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2.5 mb-7">
             <span className="w-6 h-px bg-honey/60" />
             <span className="text-honey-soft text-xs font-semibold tracking-[0.28em] uppercase">
-              Terapie Bowen
+              {en ? "Bowen Therapy" : "Terapie Bowen"}
             </span>
             <span className="w-6 h-px bg-honey/60" />
           </div>
@@ -46,19 +52,20 @@ export function HeroSection() {
 
         <BlurFadeIn delay={0.25} blur={22}>
           <h1 className="font-heading text-[2.85rem] sm:text-6xl lg:text-7xl font-extrabold text-bone leading-[1.04] tracking-[-0.025em] mb-6">
-            Corpul tău știe
+            {en ? "Your body knows" : "Corpul tău știe"}
             <br />
-            să se{" "}
+            {en ? "how to" : "să se"}{" "}
             <span className="italic font-bold text-honey-soft leading-[1.1]">
-              vindece.
+              {en ? "heal." : "vindece."}
             </span>
           </h1>
         </BlurFadeIn>
 
         <BlurFadeIn delay={0.4}>
           <p className="text-bone/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-7">
-            Eliberează tensiunea, stresul și durerile printr-o terapie blândă, în
-            Zalău și Șimleu Silvaniei. La un mesaj distanță de Bogdan.
+            {en
+              ? "Release tension, stress and pain through a gentle therapy, in Zalău and Șimleu Silvaniei. Just one message away from Bogdan."
+              : "Eliberează tensiunea, stresul și durerile printr-o terapie blândă, în Zalău și Șimleu Silvaniei. La un mesaj distanță de Bogdan."}
           </p>
         </BlurFadeIn>
 
@@ -70,7 +77,9 @@ export function HeroSection() {
               ))}
             </div>
             <span className="text-bone/65 text-sm">
-              Recomandat de clienți din Zalău și Șimleu
+              {en
+                ? "Recommended by clients in Zalău and Șimleu"
+                : "Recomandat de clienți din Zalău și Șimleu"}
             </span>
           </div>
         </BlurFadeIn>
@@ -79,7 +88,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <CTAButton
               href="#"
-              label="Programează pe WhatsApp"
+              label={en ? "Book on WhatsApp" : "Programează pe WhatsApp"}
               variant="whatsapp"
               size="lg"
               onClick={(e) => {
@@ -89,7 +98,7 @@ export function HeroSection() {
             />
             <CTAButton
               href={CONTACT.messenger}
-              label="Scrie pe Messenger"
+              label={en ? "Message on Messenger" : "Scrie pe Messenger"}
               variant="ghost-light"
               size="lg"
             />

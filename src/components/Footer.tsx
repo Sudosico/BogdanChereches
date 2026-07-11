@@ -1,17 +1,24 @@
+"use client";
+
 import Link from "next/link";
 
-import { FOOTER, CONTACT, waLink } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
+import { localizeHref } from "@/lib/href";
 import { Leaf } from "lucide-react";
 
 const FOOTER_LINKS = [
-  { label: "Ce este Bowen", href: "/ce-este-bowen" },
-  { label: "Despre", href: "/despre" },
-  { label: "Contact & Locații", href: "/contact" },
-  { label: "Întrebări frecvente", href: "/faq" },
-  { label: "Confidențialitate", href: "/confidentialitate" },
+  { ro: "Ce este Bowen", en: "What is Bowen", href: "/ce-este-bowen" },
+  { ro: "Despre", en: "About", href: "/despre" },
+  { ro: "Contact & Locații", en: "Contact & Locations", href: "/contact" },
+  { ro: "Întrebări frecvente", en: "FAQ", href: "/faq" },
+  { ro: "Confidențialitate", en: "Privacy", href: "/confidentialitate" },
 ];
 
 export function Footer() {
+  const { FOOTER } = useContent();
+  const locale = useLocale();
+  const en = locale === "en";
   return (
     <footer className="relative bg-navy text-white/60 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sage/30 to-transparent" />
@@ -20,7 +27,10 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-12">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2 mb-3">
+            <Link
+              href={localizeHref("/", locale)}
+              className="inline-flex items-center gap-2 mb-3"
+            >
               <Leaf className="w-5 h-5 text-sage-light" />
               <h3 className="font-heading text-xl font-bold text-white">
                 {FOOTER.name}
@@ -32,16 +42,16 @@ export function Footer() {
 
           <div>
             <h4 className="font-semibold text-white/80 text-sm mb-4 tracking-wider uppercase">
-              Pagini
+              {en ? "Pages" : "Pagini"}
             </h4>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={localizeHref(link.href, locale)}
                     className="text-sm hover:text-sage-light transition-colors"
                   >
-                    {link.label}
+                    {en ? link.en : link.ro}
                   </Link>
                 </li>
               ))}
@@ -78,7 +88,7 @@ export function Footer() {
                   href={`tel:${CONTACT.phone}`}
                   className="text-sm hover:text-sage-light transition-colors"
                 >
-                  Telefon
+                  {en ? "Phone" : "Telefon"}
                 </a>
               </li>
             </ul>
@@ -94,10 +104,10 @@ export function Footer() {
             <p className="text-xs text-white/20 mt-1">Made by Răzvan Gheție</p>
           </div>
           <Link
-            href="/confidentialitate"
+            href={localizeHref("/confidentialitate", locale)}
             className="text-xs text-white/25 hover:text-white/50 transition-colors shrink-0"
           >
-            Politica de confidențialitate
+            {en ? "Privacy Policy" : "Politica de confidențialitate"}
           </Link>
         </div>
       </div>

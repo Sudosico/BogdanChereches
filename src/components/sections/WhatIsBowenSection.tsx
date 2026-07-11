@@ -4,9 +4,12 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
-import { WHAT_IS_BOWEN, IMAGES } from "@/lib/constants";
+import { IMAGES } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 
 export function WhatIsBowenSection() {
+  const { WHAT_IS_BOWEN } = useContent();
+  const en = useLocale() === "en";
   return (
     <SectionWrapper id="ce-este-bowen">
       <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
@@ -18,7 +21,11 @@ export function WhatIsBowenSection() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <ImagePlaceholder
                 src={IMAGES.session}
-                alt="Bogdan Cherecheș aplicând mișcări blânde de terapie Bowen la nivelul capului și gâtului"
+                alt={
+                  en
+                    ? "Bogdan Cherecheș applying gentle Bowen therapy moves to the head and neck"
+                    : "Bogdan Cherecheș aplicând mișcări blânde de terapie Bowen la nivelul capului și gâtului"
+                }
                 fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
@@ -28,7 +35,7 @@ export function WhatIsBowenSection() {
               <div className="text-2xl mb-0.5">🌿</div>
               <p className="text-xs font-semibold text-navy">50-60 min</p>
               <p className="text-[10px] text-muted-foreground tracking-wide">
-                per ședință
+                {en ? "per session" : "per ședință"}
               </p>
             </div>
           </div>
@@ -38,7 +45,7 @@ export function WhatIsBowenSection() {
         <div className="lg:col-span-7">
           <BlurFadeIn>
             <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-              Despre Terapie
+              {en ? "About the therapy" : "Despre Terapie"}
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy mb-8 leading-[1.1]">
               {WHAT_IS_BOWEN.title}

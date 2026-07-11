@@ -2,7 +2,7 @@
 
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { FAQ_ITEMS } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 
 function FAQSchema() {
+  const { FAQ_ITEMS } = useContent();
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -35,16 +36,18 @@ function FAQSchema() {
 }
 
 export function FAQSection() {
+  const { FAQ_ITEMS } = useContent();
+  const en = useLocale() === "en";
   return (
     <SectionWrapper id="faq">
       <FAQSchema />
 
       <ScrollReveal className="text-center mb-14">
         <span className="text-sage text-sm font-semibold tracking-widest uppercase mb-3 block">
-          Întrebări frecvente
+          {en ? "FAQ" : "Întrebări frecvente"}
         </span>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
-          Ai întrebări?
+          {en ? "Have questions?" : "Ai întrebări?"}
         </h2>
       </ScrollReveal>
 

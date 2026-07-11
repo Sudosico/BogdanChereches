@@ -7,11 +7,14 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTAButton } from "@/components/CTAButton";
 import { FunnelModal } from "@/components/FunnelModal";
 import { ReassuranceStrip } from "@/components/ReassuranceStrip";
-import { FINAL_CTA, CONTACT } from "@/lib/constants";
+import { CONTACT } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { Leaf, Star } from "lucide-react";
 
 export function FinalCTASection() {
   const [funnelOpen, setFunnelOpen] = useState(false);
+  const { FINAL_CTA } = useContent();
+  const en = useLocale() === "en";
 
   return (
     <SectionWrapper
@@ -57,7 +60,9 @@ export function FinalCTASection() {
               ))}
             </div>
             <span className="text-bone/70 text-sm">
-              Recenzii reale de la clienți din Zalău și Șimleu
+              {en
+                ? "Real reviews from clients in Zalău and Șimleu"
+                : "Recenzii reale de la clienți din Zalău și Șimleu"}
             </span>
           </div>
         </ScrollReveal>

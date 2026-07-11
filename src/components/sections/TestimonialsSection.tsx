@@ -4,10 +4,12 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { TESTIMONIALS } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { Star } from "lucide-react";
 
 export function TestimonialsSection() {
+  const { TESTIMONIALS } = useContent();
+  const en = useLocale() === "en";
   // The first review is featured in the big card; the rest scroll in an
   // auto-advancing strip that the user can also drag/swipe. After any manual
   // interaction it rests briefly, then resumes drifting slowly. Duplicated
@@ -113,7 +115,7 @@ export function TestimonialsSection() {
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-14">
         <ScrollReveal className="lg:col-span-5">
           <span className="text-sage text-xs font-semibold tracking-[0.25em] uppercase mb-3 block">
-            Testimoniale
+            {en ? "Testimonials" : "Testimoniale"}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-navy leading-[1.1] mb-4">
             {TESTIMONIALS.title}
@@ -132,7 +134,7 @@ export function TestimonialsSection() {
             <span className="text-navy font-semibold">5.0</span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
             <span className="text-muted-foreground text-sm">
-              {TESTIMONIALS.reviews.length} recenzii
+              {TESTIMONIALS.reviews.length} {en ? "reviews" : "recenzii"}
             </span>
           </div>
         </ScrollReveal>

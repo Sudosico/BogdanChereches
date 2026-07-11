@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { FUNNEL, waLink } from "@/lib/constants";
+import { waLink } from "@/lib/constants";
+import { useContent, useLocale } from "@/components/ContentProvider";
 import { ReassuranceStrip } from "@/components/ReassuranceStrip";
 import { trackContactClick } from "@/lib/analytics";
 
@@ -21,6 +22,8 @@ function WhatsAppGlyph({ className }: { className?: string }) {
 }
 
 export function FunnelModal({ open, onClose }: FunnelModalProps) {
+  const { FUNNEL } = useContent();
+  const en = useLocale() === "en";
   // Escape-to-close + lock background scroll while open.
   useEffect(() => {
     if (!open) return;
@@ -38,7 +41,10 @@ export function FunnelModal({ open, onClose }: FunnelModalProps) {
 
   function handleOption(message: string) {
     trackContactClick("whatsapp", "funnel");
-    const url = waLink(FUNNEL.whatsappTemplate(message));
+    const text = en
+      ? `Hi, I'd like to book a Bowen session for ${message}. Thank you!`
+      : `Salut, aș dori o programare Bowen pentru ${message}. Mulțumesc!`;
+    const url = waLink(text);
     window.open(url, "_blank", "noopener,noreferrer");
     onClose();
   }
@@ -67,7 +73,7 @@ export function FunnelModal({ open, onClose }: FunnelModalProps) {
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-muted-foreground hover:text-forest transition-colors p-1"
-              aria-label="Închide"
+              aria-label={en ? "Close" : "Închide"}
             >
               <X className="w-5 h-5" />
             </button>
@@ -76,7 +82,7 @@ export function FunnelModal({ open, onClose }: FunnelModalProps) {
               <div className="inline-flex items-center gap-2 bg-[#1FAA53]/10 text-[#178A43] rounded-full px-3.5 py-1.5 mb-4">
                 <WhatsAppGlyph className="w-4 h-4" />
                 <span className="text-xs font-semibold tracking-wide">
-                  Mesaj pe WhatsApp, deja scris
+                  {en ? "WhatsApp message, already written" : "Mesaj pe WhatsApp, deja scris"}
                 </span>
               </div>
               <h3 className="font-heading text-2xl font-bold text-forest mb-1.5">

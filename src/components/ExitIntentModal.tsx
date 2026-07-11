@@ -5,11 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Leaf } from "lucide-react";
 import { useExitIntent } from "@/hooks/useExitIntent";
 import { CONTACT, waLink } from "@/lib/constants";
+import { useLocale } from "@/components/ContentProvider";
 import { CTAButton } from "@/components/CTAButton";
 import { ReassuranceStrip } from "@/components/ReassuranceStrip";
 
 export function ExitIntentModal() {
   const { showModal, close } = useExitIntent();
+  const en = useLocale() === "en";
 
   useEffect(() => {
     if (!showModal) return;
@@ -44,12 +46,12 @@ export function ExitIntentModal() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Programează o ședință"
+            aria-label={en ? "Book a session" : "Programează o ședință"}
           >
             <button
               onClick={close}
               className="absolute top-4 right-4 text-muted-foreground hover:text-forest transition-colors p-1"
-              aria-label="Închide"
+              aria-label={en ? "Close" : "Închide"}
             >
               <X className="w-5 h-5" />
             </button>
@@ -59,24 +61,25 @@ export function ExitIntentModal() {
                 <Leaf className="w-7 h-7 text-sage" />
               </div>
               <h3 className="font-heading text-2xl font-bold text-forest mb-2">
-                Înainte să pleci...
+                {en ? "Before you go..." : "Înainte să pleci..."}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Un mesaj scurt e tot ce trebuie. Scrie-i lui Bogdan și află când
-                te poate primi, fără nicio obligație.
+                {en
+                  ? "A short message is all it takes. Message Bogdan and find out when he can see you, with no obligation."
+                  : "Un mesaj scurt e tot ce trebuie. Scrie-i lui Bogdan și află când te poate primi, fără nicio obligație."}
               </p>
 
               <div className="flex flex-col gap-3">
                 <CTAButton
                   href={waLink()}
-                  label="Scrie pe WhatsApp"
+                  label={en ? "Message on WhatsApp" : "Scrie pe WhatsApp"}
                   variant="whatsapp"
                   size="lg"
                   className="w-full"
                 />
                 <CTAButton
                   href={CONTACT.messenger}
-                  label="Mesaj pe Messenger"
+                  label={en ? "Message on Messenger" : "Mesaj pe Messenger"}
                   variant="ghost-dark"
                   size="lg"
                   className="w-full"

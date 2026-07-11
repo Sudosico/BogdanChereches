@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { TRUST_STATS } from "@/lib/constants";
+import { useContent } from "@/components/ContentProvider";
 
 function AnimatedStat({
   value,
@@ -63,6 +63,7 @@ function AnimatedStat({
 }
 
 export function TrustStatsSection() {
+  const { TRUST_STATS } = useContent();
   return (
     <section className="relative py-20 md:py-28 bg-white overflow-hidden">
       {/* Subtle dot pattern */}

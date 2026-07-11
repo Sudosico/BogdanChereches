@@ -36,8 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
-# internal docs (kept local, not published to GitHub)
+# internal / local-only files (kept local, not published to GitHub)
 /docs/
+/README.md
+/CLAUDE.md
+/AGENTS.md
 
 # typescript
 *.tsbuildinfo

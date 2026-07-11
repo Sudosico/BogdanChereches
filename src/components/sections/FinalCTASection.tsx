@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTAButton } from "@/components/CTAButton";
 import { FunnelModal } from "@/components/FunnelModal";
 import { ReassuranceStrip } from "@/components/ReassuranceStrip";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, waLink } from "@/lib/constants";
 import { useContent, useLocale } from "@/components/ContentProvider";
 import { Leaf, Star } from "lucide-react";
 
@@ -70,7 +70,7 @@ export function FinalCTASection() {
         <ScrollReveal delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton
-              href="#"
+              href={waLink()}
               label={FINAL_CTA.buttons.whatsapp}
               variant="whatsapp"
               size="lg"

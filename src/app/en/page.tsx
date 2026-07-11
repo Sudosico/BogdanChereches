@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     description: enContent.SEO.description,
     url: `${base}/en`,
     locale: "en_US",
+    images: ["/images/og-image.jpg"],
   },
 };
 

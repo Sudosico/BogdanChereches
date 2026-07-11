@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CONTACT, IMAGES } from "@/lib/constants";
+import { CONTACT, IMAGES, waLink } from "@/lib/constants";
 import { useLocale } from "@/components/ContentProvider";
 import { BlurFadeIn } from "@/components/animations/BlurFadeIn";
 import { CTAButton } from "@/components/CTAButton";
@@ -87,7 +87,7 @@ export function HeroSection() {
         <BlurFadeIn delay={0.6}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <CTAButton
-              href="#"
+              href={waLink()}
               label={en ? "Book on WhatsApp" : "Programează pe WhatsApp"}
               variant="whatsapp"
               size="lg"

@@ -19,6 +19,16 @@ export const metadata: Metadata = {
       "x-default": `${base}/confidentialitate`,
     },
   },
+  openGraph: {
+    title: "Privacy Policy | Bogdan Cherecheș - Bowen Therapy",
+    description:
+      "Privacy policy for the Bogdan Cherecheș - Bowen Therapy website.",
+    url: `${base}/en/confidentialitate`,
+    siteName: "Bogdan Cherecheș - Bowen Therapy",
+    locale: "en_US",
+    type: "website",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export default function ConfidentialitateEn() {

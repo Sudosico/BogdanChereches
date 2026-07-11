@@ -32,6 +32,16 @@ export const metadata: Metadata = {
       "x-default": `${base}/faq`,
     },
   },
+  openGraph: {
+    title: "FAQ | Bogdan Cherecheș - Bowen Therapy",
+    description:
+      "Answers to the most common questions about Bowen Therapy in Zalău and Șimleu Silvaniei: how it works, how long a session lasts, who it is for.",
+    url: `${base}/en/faq`,
+    siteName: "Bogdan Cherecheș - Bowen Therapy",
+    locale: "en_US",
+    type: "website",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 function FAQSchema() {

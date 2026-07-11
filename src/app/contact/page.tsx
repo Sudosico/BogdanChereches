@@ -21,6 +21,16 @@ export const metadata: Metadata = {
     canonical: "/contact",
     languages: { ro: "/contact", en: "/en/contact", "x-default": "/contact" },
   },
+  openGraph: {
+    title: "Contact & Locații | Bogdan Cherecheș - Terapie Bowen",
+    description:
+      "Contactează-l pe Bogdan Cherecheș pentru programări Bowen în Zalău și Șimleu Silvaniei. WhatsApp, Messenger sau telefon.",
+    url: "/contact",
+    siteName: "Bogdan Cherecheș - Terapie Bowen",
+    locale: "ro_RO",
+    type: "website",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export default function ContactPage() {

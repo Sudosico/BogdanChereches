@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "x-default": "/confidentialitate",
     },
   },
+  openGraph: {
+    title: "Politica de confidențialitate | Bogdan Cherecheș - Terapie Bowen",
+    description:
+      "Politica de confidențialitate pentru site-ul Bogdan Cherecheș - Terapie Bowen.",
+    url: "/confidentialitate",
+    siteName: "Bogdan Cherecheș - Terapie Bowen",
+    locale: "ro_RO",
+    type: "website",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export default function ConfidentialitatePage() {

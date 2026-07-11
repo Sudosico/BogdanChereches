@@ -17,7 +17,10 @@ function AnimatedStat({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [count, setCount] = useState(0);
+  // Start at the final value so the real number is in the SSR/no-JS DOM (and
+  // survives an IntersectionObserver misfire). When scrolled into view the
+  // effect resets to 0 and animates up, off-screen, so there is no flash.
+  const [count, setCount] = useState(value);
 
   useEffect(() => {
     if (!isInView) return;

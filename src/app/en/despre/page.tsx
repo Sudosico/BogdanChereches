@@ -29,6 +29,16 @@ export const metadata: Metadata = {
       "x-default": `${base}/despre`,
     },
   },
+  openGraph: {
+    title: "About Bogdan Cherecheș | Bowen Therapy",
+    description:
+      "Bogdan Cherecheș, physiotherapist and BOWTECH-certified Bowen therapist in Zalău and Șimleu Silvaniei. Over 400 people helped.",
+    url: `${base}/en/despre`,
+    siteName: "Bogdan Cherecheș - Bowen Therapy",
+    locale: "en_US",
+    type: "website",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 const VALUES = [

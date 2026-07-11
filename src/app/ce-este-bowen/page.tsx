@@ -58,6 +58,7 @@ export const metadata: Metadata = {
       "Tot ce trebuie să știi despre Tehnica Bowen: principii, beneficii, afecțiuni și recuperare după accidentări, cu Bogdan Cherecheș în Sălaj.",
     url: `${SEO.url}/ce-este-bowen`,
     type: "article",
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -691,9 +692,9 @@ export default function CeEsteBowen() {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Adresa exactă din Zalău o primești când stabilești
-                  programarea. În Șimleu Silvaniei, cabinetul se află pe Strada
-                  Horea 60. Vezi toate detaliile pe pagina de{" "}
+                  În Zalău, cabinetul se află pe Strada Avram Iancu 47, iar în
+                  Șimleu Silvaniei pe Strada Horea 60. Vezi toate detaliile pe
+                  pagina de{" "}
                   <Link
                     href="/contact"
                     className="text-sage font-medium underline decoration-dotted underline-offset-2 hover:decoration-solid"

@@ -60,6 +60,7 @@ export const metadata: Metadata = {
       "Everything you need to know about the Bowen Technique: principles, benefits, conditions and recovery after injuries, with Bogdan Cherecheș in Sălaj.",
     url: `${base}/en/ce-este-bowen`,
     type: "article",
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -652,9 +653,9 @@ export default function CeEsteBowenEn() {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  The exact address in Zalău you receive when you set the
-                  appointment. In Șimleu Silvaniei, the practice is on Strada
-                  Horea 60. See all the details on the{" "}
+                  In Zalău, the practice is on Strada Avram Iancu 47, and in
+                  Șimleu Silvaniei on Strada Horea 60. See all the details on
+                  the{" "}
                   <Link
                     href="/en/contact"
                     className="text-sage font-medium underline decoration-dotted underline-offset-2 hover:decoration-solid"

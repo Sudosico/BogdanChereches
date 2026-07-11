@@ -53,9 +53,13 @@ function AnimatedStat({
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay, ease: [0.25, 0.4, 0.25, 1] }}
     >
-      <div className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-2">
-        <span className="tabular-nums text-navy">{count}</span>
-        <span className="text-sage">{suffix}</span>
+      <div className="font-heading font-bold tracking-tight mb-2 leading-tight">
+        <span className="tabular-nums text-navy text-5xl md:text-6xl lg:text-7xl">
+          {count}
+        </span>
+        <span className="text-sage text-xl md:text-2xl lg:text-3xl">
+          {suffix}
+        </span>
       </div>
       <div className="w-8 h-px bg-gradient-to-r from-transparent via-sage/40 to-transparent mx-auto mb-3" />
       <p className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.2em]">
